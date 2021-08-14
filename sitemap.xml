@@ -2,49 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite-url/en/1628695441/</loc>
+    <loc>http://blog.ka2x.net/categories/index.html</loc>
     
     <lastmod>2021-08-11</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite-url/categories/index.html</loc>
+    <loc>http://blog.ka2x.net/about/index.html</loc>
     
     <lastmod>2021-08-11</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite-url/about/index.html</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite-url/cn/1628609252/</loc>
+    <loc>http://blog.ka2x.net/cn/1628609252/</loc>
     
     <lastmod>2021-08-10</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite-url/tags/index.html</loc>
+    <loc>http://blog.ka2x.net/tags/index.html</loc>
     
     <lastmod>2021-08-09</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite-url/404.html</loc>
+    <loc>http://blog.ka2x.net/404.html</loc>
     
     <lastmod>2021-08-09</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite-url/archive/index.html</loc>
+    <loc>http://blog.ka2x.net/archive/index.html</loc>
     
     <lastmod>2017-03-20</lastmod>
     
@@ -52,23 +45,16 @@
   
 
   <url>
-    <loc>http://yoursite-url/</loc>
-    <lastmod>2021-08-11</lastmod>
+    <loc>http://blog.ka2x.net/</loc>
+    <lastmod>2021-08-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>http://yoursite-url/tags/test/</loc>
-    <lastmod>2021-08-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite-url/tags/SSD/</loc>
-    <lastmod>2021-08-11</lastmod>
+    <loc>http://blog.ka2x.net/tags/SSD/</loc>
+    <lastmod>2021-08-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
