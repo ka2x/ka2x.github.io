@@ -135,10 +135,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://blog.ka2x.net/cn/">
+  <link rel="canonical" href="http://blog.ka2x.net/cn/1629034938/">
   <title>
     
-      KA2X BLOG
+      多步问题——斐波那契、青蛙跳台阶、三步问题的拓展 - KA2X BLOG
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -296,25 +296,7 @@
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      简体中文
-    </span>
-    <select id="lang-select" data-canonical="cn/index.html">
-      
-      
-      <option value="cn"  selected >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -366,19 +348,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('');
-      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/lml_bg.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/lml_bg.jpg');
     }
 
     header.intro-header {
-       /*config*/
-        background-image: var(--intro-header-background-image-url-home);
-        /* background-image: url('/img/header_img/newhome_bg.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/lml_bg.jpg'); */
       
     }
 
@@ -396,10 +378,44 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>Home</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">NEVER TOO OLD TO LEARN</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#algorithm" title="algorithm">algorithm</a>
+              
+              <a class="tag" href="/tags/#Java" title="Java">Java</a>
+              
+            </div>
+            <h1>多步问题——斐波那契、青蛙跳台阶、三步问题的拓展</h1>
+            <h2 class="subheading">刷经典算法时，发现了三个算法的规律，便拓展设计了这么一个算法</h2>
+            <span class="meta">
+              Posted by ka2x on
+              2021-08-15
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">4</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">1.1k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -440,275 +456,285 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h3 id="经典问题">经典问题</h3>
+<blockquote>
+<p>其实这几个问题，就是一共有n个台阶，然后每一次跳1~2步（1~3步），问有多少种情况。</p>
+</blockquote>
+<p>青蛙问题：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/qing-wa-tiao-tai-jie-wen-ti-lcof/">https://leetcode-cn.com/problems/qing-wa-tiao-tai-jie-wen-ti-lcof/</a><br>
+斐波那契数列：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/">https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/</a><br>
+三步问题：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/three-steps-problem-lcci/">https://leetcode-cn.com/problems/three-steps-problem-lcci/</a></p>
+<h3 id="分析">分析</h3>
+<p>对于这种问题，要<strong>自顶向下</strong>进行分析</p>
+<ul>
+<li>首先看<strong>斐波那契</strong>数列，我们先自顶向下分析，f(n)其实是f(n-1)和f(n-2)的和，我们如果画成树，就会发现底层叶子节点都是 f(0)=0 和 f(1)=1。</li>
+<li>我们再看经典的<strong>青蛙问题</strong>，每次跳1~2步，跳一步的情况+跳两步的情况，f(n)=f(n-1)+f(n-2)，其实本质也是斐波那契数列。（初始值及其含义不一样）</li>
+<li>最后看<strong>三步问题</strong>，每次跳1~3步，跳一步的情况+跳两步的情况+跳三步的情况，f(n)=f(n-1)+f(n-2)+f(n-3)，很像斐波那契数列。（初始值及其含义不一样）</li>
+</ul>
+<h3 id="求解">求解</h3>
+<p>我们其实很容易想到递归实现，但是这样很多叶子节点，例如 f(0) 和 f(1) 这些基值，都会被重复计算到。所以我们采用<strong>自底向上</strong>求解方法！</p>
+<blockquote>
+<p>写在前面：（如果看不懂再回来看）</p>
+<ul>
+<li>为什么青蛙和三步问题的初值要这么设置？我们初始值都从f(0)开始设置，其实在青蛙中也可以设置f(-1)=0，f(0)=1，这样我们分析出的树就会多一层，但由于是自底向上求解，所以只多出了一步：f(1)=f(0)+f(-1)=1+0=1，这对我们是没什么影响的。</li>
+<li>初值的数量为什么青蛙是2个，三步问题是3个？因为对于青蛙问题，青蛙最多跳两步，在算法中f(1)会被直接返回一个1，所以不会计算到f(1)=f(0)+f(-1)上，而我们有了f(0)和f(1)，这两种叶子，就可以从f(2)求到f(n)直到构造出整颗树。三步问题就有三种叶子来构造求解整棵树。</li>
+</ul>
+</blockquote>
+<ul>
+<li>首先看<strong>斐波那契</strong>数列，我们初始化f(0)=0，f(1)=1，然后求 f(2) = f(1)+f(0)=1，这样可以一直求到f(n)</li>
+<li>我们再看<strong>青蛙问题</strong>，但这次我们初始化 f(0)=1,f(1)=1,这表示如果剩下了0个或1个台阶，都只有一种跳法。例：f(2) = f(1)+f(0)=2，表示还有2个台阶时，跳一步之后剩1个，所以只有一种情况(f(2-1)=f(1)=1)，跳两步之后剩0个，也只有一种情况(f(2-2)=f(0)=1)。用同样的思路，我们可以求解到f(n)</li>
+<li>最后看<strong>三步问题</strong>，参考青蛙问题，初始化的时候f(0)=1,f(1)=1,f(2)=2</li>
+</ul>
+<h3 id="多步问题">多步问题</h3>
+<p>其实从上面的求解不难看出规律：一次可以跳多少个步（这里用maxStep表示）就初始化多少个值（叶子），其他都和青蛙和多步问题差不多。</p>
+<p>于是我们有了求解思路：然后开辟maxStep大小的空间（这里用a[]数组存放），每一次迭代都将a数组中所有的值相加，然后循环移动位置（当然用一个指针标记更好）将最小（最早进来的）的去掉，相加得到的值放进来。这样迭代若干次之后就是最终结果。</p>
+<blockquote>
+<p>细节： 每一次可以跳的最大步数maxStep，如果超过了赛道的最大长度（这里用n表示），那么maxStep可以用n的值，效果一样。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">waysToStep</span><span class="params">(<span class="keyword">int</span> maxStep, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">	 <span class="comment">// 暂时规定求解范围，因为结果较大int无法存储，double又精度不够</span></span><br><span class="line">	 <span class="keyword">if</span> (maxStep &lt; <span class="number">0</span> || maxStep &gt; <span class="number">7</span> || n &gt; <span class="number">100</span> || n &lt; <span class="number">0</span>) &#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="comment">// 最大步数大于n，效果和n一样</span></span><br><span class="line">     <span class="keyword">if</span> (maxStep &gt; n) &#123;</span><br><span class="line">         maxStep = n;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="comment">// 初值（叶子）</span></span><br><span class="line">     <span class="keyword">int</span>[] a = <span class="keyword">new</span> <span class="keyword">int</span>[maxStep];</span><br><span class="line">     a[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; maxStep; i++) &#123;</span><br><span class="line">         <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;</span><br><span class="line">             a[i] += a[j];</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="comment">// 开始循环求解</span></span><br><span class="line">     <span class="keyword">int</span> tmp = a[maxStep - <span class="number">1</span>];</span><br><span class="line">     <span class="comment">// 这里 n&gt;2 是测试出来的结果，理解上难，但省去了for循环的i变量</span></span><br><span class="line">     <span class="keyword">while</span> (n &gt; <span class="number">2</span>) &#123;</span><br><span class="line">         <span class="keyword">int</span> i;</span><br><span class="line">         <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; maxStep - <span class="number">1</span>; i++) &#123;</span><br><span class="line">             tmp += a[i];</span><br><span class="line">             <span class="comment">// 数组移位</span></span><br><span class="line">             a[i] = a[i + <span class="number">1</span>];</span><br><span class="line">         &#125;</span><br><span class="line">         a[i] = tmp;</span><br><span class="line">         n--;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> tmp;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/cn/1629032754/" data-toggle="tooltip" data-placement="top" title="入门TCP的机制及握手挥手">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=多步问题——斐波那契、青蛙跳台阶、三步问题的拓展&body=Hi,I found this website and thought you might like it http://blog.ka2x.net/cn/1629034938/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Sun Aug 15 2021 21:42:18 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E7%BB%8F%E5%85%B8%E9%97%AE%E9%A2%98"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">经典问题</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%88%86%E6%9E%90"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">分析</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E6%B1%82%E8%A7%A3"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">求解</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%A4%9A%E6%AD%A5%E9%97%AE%E9%A2%98"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">多步问题</span></a></li></ol>
+        
+        </div>
+      </aside>
     
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
+
+
+      <!-- Sidebar Container -->
+      <div class="
                 col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+                col-md-10 col-md-offset-1
+                sidebar-container">
 
-      <!-- Main Content -->
-
-
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/1629034938/">
-    <h2 class="post-title">
-      多步问题——斐波那契、青蛙跳台阶、三步问题的拓展
-    </h2>
-    <h3 class="post-subtitle">
-      刷经典算法时，发现了三个算法的规律，便拓展设计了这么一个算法
-    </h3>
-    <div class="post-content-preview">
-      经典问题
-
-其实这几个问题，就是一共有n个台阶，然后每一次跳1~2步（1~3步），问有多少种情况。
-
-青蛙问题：https://leetcode-cn.com/problems/qing-wa-tiao-tai-jie-wen-ti-lcof/
-斐波那契数列：https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/
-三步问题：ht......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by ka2x on
-    2021-08-15
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#algorithm" title="algorithm">algorithm</a>
-    
-    <a href="/tags/#Java" title="Java">Java</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/1629032754/">
-    <h2 class="post-title">
-      入门TCP的机制及握手挥手
-    </h2>
-    <h3 class="post-subtitle">
-      个人对于面试或者开发有用的TCP基础知识的总结
-    </h3>
-    <div class="post-content-preview">
-      TCP概念
-TCP，传输控制协议（Transmission Control Protocol），是一种面向连接的、可靠的、基于字节流的传输层通信协议。是为了在不可靠的互联网络上提供可靠的端到端字节流而专门设计的一个传输协议。
-
-不得不提一下UDP，是Internet 协议集支持的一个无连接的传输协议，全名为用户数据报协议（UDP，User Datagram Protocol）。UDP 为应用......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by ka2x on
-    2021-08-15
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#TCP" title="TCP">TCP</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/1628609252/">
-    <h2 class="post-title">
-      固态硬盘SSD sata接口 m2接口及相关协议的关系
-    </h2>
-    <h3 class="post-subtitle">
-      总结了在挑选固态硬盘盒的时候出现的一些问题
-    </h3>
-    <div class="post-content-preview">
-      sata接口
-分为sata2和sata3
-主板的接口：
-
-硬盘的接口
-
-长的部分是充电口，SATA 2.0和3.0在充电口方面是通用的。所以有一些充电线也会分出几个充电口出来。
-短的部分是数据口。
-sata2 和 sata3 的简单区别就是他们的速度不同，sata2 是3Gb/s，sata3 是6GB/s
-m.2接口
-考虑到超极本用户的存储需求，Intel急切的推出了这种新的主机接口标准。
-......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by ka2x on
-    2021-08-10
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#SSD" title="SSD">SSD</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-
-  <!-- Pager -->
-  <ul class="pager">
-    
-    
-  </ul>
-
-
-      <!-- 如果开启评论功能 -->
-      
-    </div>
-
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Visitors -->
-<h5><a href="/">来访者</a></h5>
-
-<div class="widget">
-  <span>
-    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-  </span>
-  <br />
-  <span>
-    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-  </span>
-</div>
-
-
-        <hr>
-    
         <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#algorithm" title="algorithm">algorithm</a>
+            
+            <a class="tag" href="/tags/#Java" title="Java">Java</a>
+            
+          </div>
+        </section>
+        
 
-<section>
-  <h5><a href="/tags/">特色标签</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#TCP" title="TCP" rel="1">TCP</a>
-    
-    
-    
-    <a href="/tags/#SSD" title="SSD" rel="1">SSD</a>
-    
-    
-    
-    <a href="/tags/#algorithm" title="algorithm" rel="1">algorithm</a>
-    
-    
-    
-    <a href="/tags/#Java" title="Java" rel="1">Java</a>
-    
-    
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+        </ul>
+        
+      </div>
+    </div>
   </div>
-</section>
+</article>
 
 
-        <hr>
-    
-        <!-- RECENT POSTS -->
 
-<h5><a href="/">最近博文</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="1629034938/">
-      <li>多步问题——斐波那契、青蛙跳台阶、三步问题的拓展</li>
-    </a>
-    
-    <a href="1629032754/">
-      <li>入门TCP的机制及握手挥手</li>
-    </a>
-    
-    <a href="1628609252/">
-      <li>固态硬盘SSD sata接口 m2接口及相关协议的关系</li>
-    </a>
-    
-  </ul>
-</div>
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
 
+<!-- anchorjs end -->
 
-        <hr>
-    
-        <!-- Archives -->
-
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archives/2021/08/">August 2021</a><span class="archive-list-count">3</span></li></ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#network">
-      <li>network</li>
-    </a>
-    
-    <a href="/categories/#hardware">
-      <li>hardware</li>
-    </a>
-    
-    <a href="/categories/#algorithm">
-      <li>algorithm</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
-  </div>
-</div>
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
