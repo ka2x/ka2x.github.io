@@ -9,6 +9,13 @@
   </url>
   
   <url>
+    <loc>http://blog.ka2x.net/cn/1629032754/</loc>
+    
+    <lastmod>2021-08-15</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.ka2x.net/categories/index.html</loc>
     
     <lastmod>2021-08-11</lastmod>
@@ -73,6 +80,20 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>http://blog.ka2x.net/tags/algorithm/</loc>
+    <lastmod>2021-08-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.ka2x.net/tags/Java/</loc>
+    <lastmod>2021-08-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -84,6 +105,13 @@
   
   <url>
     <loc>http://blog.ka2x.net/categories/network/</loc>
+    <lastmod>2021-08-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.ka2x.net/categories/algorithm/</loc>
     <lastmod>2021-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
