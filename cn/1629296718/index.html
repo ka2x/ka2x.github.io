@@ -539,7 +539,7 @@
 <h5 id="状态转移方程"><a href="#状态转移方程" class="headerlink" title="状态转移方程"></a>状态转移方程</h5><blockquote>
 <p>这里将.看作普通字符，只在判断是否相等时默认相等即可。不用去单独考虑它的特殊性。</p>
 </blockquote>
-<p><img src="C:\Users\15815\AppData\Roaming\Typora\typora-user-images\image-20210818213958660.png" alt="image-20210818213958660"></p>
+<p><img src="https://raw.githubusercontent.com/ka2x/blog-img/main/202108191407863.png" alt="image-20210818213958660"></p>
 <p>看当前位置是否为*，如果不是，那么如果当前位置值是相同的，而且左上角（前面部分）也成功，就算当前位置匹配成功。</p>
 <p>是*，就看看*前一个字符是否等于当前字符， 不是也没关系，就当作没有出现过*和前面的值，左边第二个成功就算成功。</p>
 <p>如果等于，那么也可以当作没有出现过*和前面的值，左边第二个成功就算成功。</p>
