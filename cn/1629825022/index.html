@@ -404,7 +404,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">543</span> In Total
+              Words <span class="post-count">614</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -466,26 +466,35 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="所在包"><a href="#所在包" class="headerlink" title="所在包"></a>所在包</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> java.util;</span><br></pre></td></tr></table></figure>
-<h1 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Queue</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">Collection</span>&lt;<span class="title">E</span>&gt; </span></span><br></pre></td></tr></table></figure>
+        <h1>所在包</h1>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> java.util;</span><br></pre></td></tr></table></figure>
+<h1>声明</h1>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Queue</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">Collection</span>&lt;<span class="title">E</span>&gt; </span></span><br></pre></td></tr></table></figure>
 <p>集合接口的单参数泛型子接口。</p>
 <p>是一个要求按“队列”来处理集合（Collection）中收集的元素而产生的接口。</p>
-<p>队列覆盖了 Collection 的插入（add）、提取（remove）和检查（element）操作并且还自己提供了另一套插入（offer）、提取（poll）和检查（peek）。看似这些方法重复了，但是加入操作失败，那么一个是抛出异常，另一个就是以特殊值返回。</p>
-<p>队列可能不一定是先进先出，因为某些队列的实现结构（例如优先级队列），会在其中进行排序。但是队列的头都是调用 remove() 或 poll() 将被删除的元素。在 FIFO 队列中，所有的新元素都插入到队列的尾部。其他类型的队列可能使用不同的放置规则。每个Queue实现必须指定其排序属性。</p>
-<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><h2 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>队列覆盖了 Collection 的插入（add）、提取（remove）和检查（element）操作并且还自己提供了另一套插入（offer）、提取（poll）和检查（peek）。看似这些方法重复了，但是如果操作失败，那么一个是抛出异常，另一个就是以特殊值返回。</p>
+<p>队列可能不一定是先进先出，因为某些队列的实现结构，会在其中进行排序（例如优先级队列）。但是队列的头都是调用 remove() 或 poll() 将被删除的元素。在 FIFO 队列中，所有的新元素都插入到队列的尾部。其他类型的队列可能使用不同的放置规则。每个Queue实现必须指定其排序属性。</p>
+<h1>方法</h1>
+<h2 id="入队1">入队1</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span></span>;</span><br></pre></td></tr></table></figure>
 <p>如果容量够，将指定的元素插入到队列中。失败会出现 IllegalStateException 异常。</p>
-<h2 id="入队"><a href="#入队" class="headerlink" title="入队"></a>入队</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">offer</span><span class="params">(E e)</span></span>;</span><br></pre></td></tr></table></figure>
+<h2 id="入队2">入队2</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">offer</span><span class="params">(E e)</span></span>;</span><br></pre></td></tr></table></figure>
 <p>如果容量够，将指定的元素插入到队列中。当使用一个容量受限的队列时，这种方法通常是优于add方法，后者只能插入元素失败抛出 IllegalStateException  异常，而前者返回false。</p>
-<h2 id="移除"><a href="#移除" class="headerlink" title="移除"></a>移除</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E <span class="title">remove</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<h2 id="出队1">出队1</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E <span class="title">remove</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
 <p>也就是出队。如果队列空的，抛出 NoSuchElementException 异常。</p>
-<h2 id="出队"><a href="#出队" class="headerlink" title="出队"></a>出队</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E <span class="title">poll</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<h2 id="出队2">出队2</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E <span class="title">poll</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
 <p>出队。如果队列空，返回 null。</p>
-<h2 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E <span class="title">element</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<h2 id="查看队头元素1">查看队头元素1</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E <span class="title">element</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
 <p>检索但不删除此队列的头部。这个方法如果队列空会抛出 NoSuchElementException 异常</p>
-<h2 id="查看队头元素"><a href="#查看队头元素" class="headerlink" title="查看队头元素"></a>查看队头元素</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E <span class="title">peek</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<h2 id="查看队头元素2">查看队头元素2</h2>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E <span class="title">peek</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
 <p>检索但不删除此队列的头部。这个方法如果队列空就返回null。</p>
-<h2 id="父接口继承方法"><a href="#父接口继承方法" class="headerlink" title="父接口继承方法"></a>父接口继承方法</h2><p>Collection 自带的，而且未被覆盖的方法：</p>
-<div class="table-container">
+<h2 id="父接口继承方法">父接口继承方法</h2>
+<p>Collection 自带的，而且未被覆盖的方法：</p>
 <table>
 <thead>
 <tr>
@@ -552,7 +561,38 @@
 </tr>
 </tbody>
 </table>
-</div>
+<h1>实现</h1>
+<p>Queue的实现类，一般都会先继承 Queue 的抽象实现类 AbstractQueue，从而间接去实现 Queue 接口。</p>
+<table>
+<thead>
+<tr>
+<th>实现类</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>java.util.LinkedList</td>
+</tr>
+<tr>
+<td>java.util.PriorityQueue</td>
+</tr>
+<tr>
+<td>java.util.concurrent.LinkedBlockingQueue</td>
+</tr>
+<tr>
+<td>java.util.concurrent.BlockingQueue</td>
+</tr>
+<tr>
+<td>java.util.concurrent.ArrayBlockingQueue</td>
+</tr>
+<tr>
+<td>java.util.concurrent.LinkedBlockingQueue</td>
+</tr>
+<tr>
+<td>java.util.concurrent.PriorityBlockingQueue</td>
+</tr>
+</tbody>
+</table>
 
 
         <hr>
@@ -698,7 +738,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E6%89%80%E5%9C%A8%E5%8C%85"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">所在包</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%A3%B0%E6%98%8E"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">声明</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">方法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%B7%BB%E5%8A%A0"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">添加</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%A5%E9%98%9F"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">入队</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%A7%BB%E9%99%A4"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">移除</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%87%BA%E9%98%9F"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">出队</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%83%E7%B4%A0"><span class="toc-nav-number">3.5.</span> <span class="toc-nav-text">元素</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9F%A5%E7%9C%8B%E9%98%9F%E5%A4%B4%E5%85%83%E7%B4%A0"><span class="toc-nav-number">3.6.</span> <span class="toc-nav-text">查看队头元素</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%88%B6%E6%8E%A5%E5%8F%A3%E7%BB%A7%E6%89%BF%E6%96%B9%E6%B3%95"><span class="toc-nav-number">3.7.</span> <span class="toc-nav-text">父接口继承方法</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">所在包</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">声明</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">方法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%A5%E9%98%9F1"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">入队1</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%A5%E9%98%9F2"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">入队2</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%87%BA%E9%98%9F1"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">出队1</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%87%BA%E9%98%9F2"><span class="toc-nav-number">3.4.</span> <span class="toc-nav-text">出队2</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9F%A5%E7%9C%8B%E9%98%9F%E5%A4%B4%E5%85%83%E7%B4%A01"><span class="toc-nav-number">3.5.</span> <span class="toc-nav-text">查看队头元素1</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9F%A5%E7%9C%8B%E9%98%9F%E5%A4%B4%E5%85%83%E7%B4%A02"><span class="toc-nav-number">3.6.</span> <span class="toc-nav-text">查看队头元素2</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%88%B6%E6%8E%A5%E5%8F%A3%E7%BB%A7%E6%89%BF%E6%96%B9%E6%B3%95"><span class="toc-nav-number">3.7.</span> <span class="toc-nav-text">父接口继承方法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">实现</span></a></li></ol>
         
         </div>
       </aside>
