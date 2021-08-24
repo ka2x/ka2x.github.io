@@ -474,13 +474,10 @@
       分析了Queue接口的方法和含义
     </h3>
     <div class="post-content-preview">
-      所在包
-1package java.util;
-声明
-1public interface Queue&lt;E&gt; extends Collection&lt;E&gt; 
-集合接口的单参数泛型子接口。
+      介绍
 是一个要求按“队列”来处理集合（Collection）中收集的元素而产生的接口。
-队列覆盖了 Collection 的插入（add）、提取（remove）和检查（element）操作并且......
+队列覆盖了 Collection 的插入（add）、提取（remove）和检查（element）操作并且还自己提供了另一套插入（offer）、提取（poll）和检查（peek）。看似这些方法重复了，但是如果操作失败，那么一个是抛出异常，另一个就是以特殊值返回。
+队列可能不一定是先进先出，因为某些队列的实现......
     </div>
   </a>
   
