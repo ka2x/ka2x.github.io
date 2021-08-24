@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.ka2x.net/cn/1629825022/</loc>
+    
+    <lastmod>2021-08-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.ka2x.net/cn/1629296718/</loc>
     
     <lastmod>2021-08-18</lastmod>
@@ -74,7 +81,7 @@
 
   <url>
     <loc>http://blog.ka2x.net/</loc>
-    <lastmod>2021-08-19</lastmod>
+    <lastmod>2021-08-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -82,35 +89,49 @@
   
   <url>
     <loc>http://blog.ka2x.net/tags/TCP/</loc>
-    <lastmod>2021-08-19</lastmod>
+    <lastmod>2021-08-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://blog.ka2x.net/tags/algorithm/</loc>
-    <lastmod>2021-08-19</lastmod>
+    <lastmod>2021-08-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://blog.ka2x.net/tags/Java/</loc>
-    <lastmod>2021-08-19</lastmod>
+    <lastmod>2021-08-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://blog.ka2x.net/tags/SSD/</loc>
-    <lastmod>2021-08-19</lastmod>
+    <lastmod>2021-08-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://blog.ka2x.net/tags/regex/</loc>
-    <lastmod>2021-08-19</lastmod>
+    <lastmod>2021-08-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.ka2x.net/tags/jdk/</loc>
+    <lastmod>2021-08-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.ka2x.net/tags/source-code/</loc>
+    <lastmod>2021-08-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -119,21 +140,28 @@
   
   <url>
     <loc>http://blog.ka2x.net/categories/network/</loc>
-    <lastmod>2021-08-19</lastmod>
+    <lastmod>2021-08-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://blog.ka2x.net/categories/algorithm/</loc>
-    <lastmod>2021-08-19</lastmod>
+    <lastmod>2021-08-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://blog.ka2x.net/categories/hardware/</loc>
-    <lastmod>2021-08-19</lastmod>
+    <lastmod>2021-08-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.ka2x.net/categories/source-code/</loc>
+    <lastmod>2021-08-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
