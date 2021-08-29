@@ -243,9 +243,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/archive/">
               
-              关于
+              归档
               
               
             </a>
@@ -254,9 +254,9 @@
           
           
           <li>
-            <a href="/archive/">
+            <a href="/about/">
               
-              归档
+              关于
               
               
             </a>
@@ -464,22 +464,17 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h3 id="经典问题">经典问题</h3>
-<blockquote>
+        <h3 id="经典问题"><a href="#经典问题" class="headerlink" title="经典问题"></a>经典问题</h3><blockquote>
 <p>其实这几个问题，就是一共有n个台阶，然后每一次跳1~2步（1~3步），问有多少种情况。</p>
 </blockquote>
-<p>青蛙问题：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/qing-wa-tiao-tai-jie-wen-ti-lcof/">https://leetcode-cn.com/problems/qing-wa-tiao-tai-jie-wen-ti-lcof/</a><br>
-斐波那契数列：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/">https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/</a><br>
-三步问题：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/three-steps-problem-lcci/">https://leetcode-cn.com/problems/three-steps-problem-lcci/</a></p>
-<h3 id="分析">分析</h3>
-<p>对于这种问题，要<strong>自顶向下</strong>进行分析</p>
+<p>青蛙问题：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/qing-wa-tiao-tai-jie-wen-ti-lcof/">https://leetcode-cn.com/problems/qing-wa-tiao-tai-jie-wen-ti-lcof/</a><br>斐波那契数列：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/">https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/</a><br>三步问题：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/three-steps-problem-lcci/">https://leetcode-cn.com/problems/three-steps-problem-lcci/</a></p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>对于这种问题，要<strong>自顶向下</strong>进行分析</p>
 <ul>
 <li>首先看<strong>斐波那契</strong>数列，我们先自顶向下分析，f(n)其实是f(n-1)和f(n-2)的和，我们如果画成树，就会发现底层叶子节点都是 f(0)=0 和 f(1)=1。</li>
 <li>我们再看经典的<strong>青蛙问题</strong>，每次跳1~2步，跳一步的情况+跳两步的情况，f(n)=f(n-1)+f(n-2)，其实本质也是斐波那契数列。（初始值及其含义不一样）</li>
 <li>最后看<strong>三步问题</strong>，每次跳1~3步，跳一步的情况+跳两步的情况+跳三步的情况，f(n)=f(n-1)+f(n-2)+f(n-3)，很像斐波那契数列。（初始值及其含义不一样）</li>
 </ul>
-<h3 id="求解">求解</h3>
-<p>我们其实很容易想到递归实现，但是这样很多叶子节点，例如 f(0) 和 f(1) 这些基值，都会被重复计算到。所以我们采用<strong>自底向上</strong>求解方法！</p>
+<h3 id="求解"><a href="#求解" class="headerlink" title="求解"></a>求解</h3><p>我们其实很容易想到递归实现，但是这样很多叶子节点，例如 f(0) 和 f(1) 这些基值，都会被重复计算到。所以我们采用<strong>自底向上</strong>求解方法！</p>
 <blockquote>
 <p>写在前面：（如果看不懂再回来看）</p>
 <ul>
@@ -492,8 +487,7 @@
 <li>我们再看<strong>青蛙问题</strong>，但这次我们初始化 f(0)=1,f(1)=1,这表示如果剩下了0个或1个台阶，都只有一种跳法。例：f(2) = f(1)+f(0)=2，表示还有2个台阶时，跳一步之后剩1个，所以只有一种情况(f(2-1)=f(1)=1)，跳两步之后剩0个，也只有一种情况(f(2-2)=f(0)=1)。用同样的思路，我们可以求解到f(n)</li>
 <li>最后看<strong>三步问题</strong>，参考青蛙问题，初始化的时候f(0)=1,f(1)=1,f(2)=2</li>
 </ul>
-<h3 id="多步问题">多步问题</h3>
-<p>其实从上面的求解不难看出规律：一次可以跳多少个步（这里用maxStep表示）就初始化多少个值（叶子），其他都和青蛙和多步问题差不多。</p>
+<h3 id="多步问题"><a href="#多步问题" class="headerlink" title="多步问题"></a>多步问题</h3><p>其实从上面的求解不难看出规律：一次可以跳多少个步（这里用maxStep表示）就初始化多少个值（叶子），其他都和青蛙和多步问题差不多。</p>
 <p>于是我们有了求解思路：然后开辟maxStep大小的空间（这里用a[]数组存放），每一次迭代都将a数组中所有的值相加，然后循环移动位置（当然用一个指针标记更好）将最小（最早进来的）的去掉，相加得到的值放进来。这样迭代若干次之后就是最终结果。</p>
 <blockquote>
 <p>细节： 每一次可以跳的最大步数maxStep，如果超过了赛道的最大长度（这里用n表示），那么maxStep可以用n的值，效果一样。</p>
