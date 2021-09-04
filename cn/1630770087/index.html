@@ -135,10 +135,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://blog.ka2x.net/tags/">
+  <link rel="canonical" href="https://blog.ka2x.net/cn/1630770087/">
   <title>
     
-      Tags - KA2X BLOG
+      硬件系列之——客制化键盘基本概念 - KA2X BLOG
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -296,25 +296,7 @@
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      简体中文
-    </span>
-    <select id="lang-select" data-canonical="tags/index.html">
-      
-      
-      <option value="cn"  selected >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -366,19 +348,19 @@
     .body--light {
       /* intro-header */
       --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: url('img/header_img/tag_bg.jpg');
-      --intro-header-background-image-url-page: url('/img/header_img/tag_bg.jpg');
+      --intro-header-background-image-url-post: url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: url('//img/header_img/lml_bg.jpg');
     }
     .body--dark {
       --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
-      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('img/header_img/tag_bg.jpg');
-      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/tag_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/lml_bg.jpg');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('//img/header_img/lml_bg.jpg');
     }
 
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('/img/header_img/tag_bg.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('/img/header_img/lml_bg.jpg'); */
       
     }
 
@@ -396,10 +378,42 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>Tags</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">I don’t know where I am going, but I am on my way......</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+              <a class="tag" href="/tags/#peripheral" title="peripheral">peripheral</a>
+              
+            </div>
+            <h1>硬件系列之——客制化键盘基本概念</h1>
+            <h2 class="subheading">前阵子入手了客制化键盘，简单谈谈入门客制化需要注意哪些问题</h2>
+            <span class="meta">
+              Posted by ka2x on
+              2021-09-04
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">3</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">1.1k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -440,382 +454,294 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <!-- 标签列表 -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-      <!-- 标签云 -->
-      <div id='tag_cloud' class="tags">
+        <h1>基本概念</h1>
+<h2 id="客制化">客制化</h2>
+<p>客制化键盘就是顾客定制的键盘。</p>
+<p>一般是所有部件可拆、可换</p>
+<p>可以进行编程修改内部逻辑，例如按键等</p>
+<p>所有外观配件都可以都可以自行设计，为自己量身打造</p>
+<h2 id="配列">配列</h2>
+<p>有61、64、68、73、80、84、87、98、96、104、108</p>
+<p>大多数家庭用的是104键。</p>
+<p>现在客制化键盘用的比较多的是68配列，或者说偏向于少键的配列。</p>
+<h2 id="连接模式">连接模式</h2>
+<p>一般分为有线、蓝牙、2.4G。</p>
+<h2 id="键位冲突">键位冲突</h2>
+<p>要看多少键无冲，就是最多同时按住多少个键可以同时生效。</p>
+<p>一般来说，有8就够用了，因为一般人只会同时按下8个键。</p>
+<h2 id="驱动">驱动</h2>
+<p>一般一个品牌或者厂商会有自己驱动。可以去官网下载。</p>
+<p>一般可以更改背光、按键宏定义等。</p>
+<h1>基本组成</h1>
+<h2 id="键帽">键帽</h2>
+<p>一整套，在外观设计上各异</p>
+<h2 id="轴">轴</h2>
+<h3 id="基本概念">基本概念</h3>
+<p>轴一般没有实质功能，之所以拆分出来，是由于机械轴就是机械键盘的按键。不同的轴具有不同的手感以及声音。</p>
+<p>轴一般以颜色进行划分，虽然各个厂商都有自己的颜色轴，但是大家约定俗成地对赋予了相同颜色的轴相似的特性，对客户选择较友好。</p>
+<h3 id="常见的轴">常见的轴</h3>
+<h4 id="黑轴">黑轴</h4>
+<p>黑轴的声音是所有轴承中最小的，段落感不明显，办公和游戏都适合，键程为1.5mm，单个黑轴的使用寿命最高可达5000万次按压，其他轴承为2000万左右。黑轴机械键盘对于玩游戏来说属于全能型的，可以适用任何游戏，玩家最认可的应该是FPS游戏。主要是因为黑轴手感较硬，键程够短，回馈力度大，而玩射击游戏只需要几个按键而已，所以比较适合。如果你喜欢玩CF/CS/绝地求生等等射击游戏的话，可以用黑轴机械键盘。</p>
+<h4 id="茶轴">茶轴</h4>
+<p>段落轴体，触发键程 2.0mm，初始压力 30cN，触发压力 45 ± 20cN，段落压力 55 ± 25cN，段落行程 1.25mm。茶轴是最接近薄膜键盘的轴体，因其虽有段落但并不明显，同时触发压力也较轻，如果是刚从薄膜键盘过渡，选择茶轴倒是比较适合的。同时，段落感的不明显也使得按压时发出的声音比青轴要小一些。</p>
+<p>总体来说RTS（RTS即即时战略游戏）游戏的玩家们对于键盘的操作较高，用到的按键也比较多，黑轴偏硬不适合长时间快速频繁按下按键，而FPS游戏仅仅会用到几个常用的按键即可，因此按键较软的茶轴比较适合RTS游戏玩家选择。</p>
+<h4 id="青轴">青轴</h4>
+<p>段落感最强、Click声音最大，机械感最强，是机械键盘的代表轴，需下压2.4mm才可触发，打字节奏感十足，但是声音较大，比较吵 , 压力克数为60g。有人将其比喻为Cherry的春天，爽快清脆的段落感如春天般舒畅。适合办公打字，玩游戏一般不推荐，因为青轴键程长，段落感强，所以青轴玩游戏的话反映速度可能会比其他轴承更慢。</p>
+<h4 id="红轴">红轴</h4>
+<p>与黑轴相似。但压力克数比黑轴小，起35，终60（黑轴起点为40）。手感比较轻盈。敲击时没有段落感，直上直下，触发键程也同为2.0mm，敲击时更加轻松，能很好兼顾游戏和打字的使用需求。</p>
+<p>红轴是目前受关注度极高的机械轴，红轴的手感介乎于黑轴和茶轴之间，而且红轴比茶轴和黑轴要更轻，在游戏中的表现也非常不错，适合FPS和RTS游戏同时也适合文字输入。</p>
+<h4 id="白轴">白轴</h4>
+<p>有些用户把白轴称为“绷紧的茶轴”，因为使用它可以感受到比茶轴更大的触感。白轴的压力克数较大，按起来比较费力。白轴目前已经停产，在市场上也比较难找到。(红轴是在白轴停产之后推出的)</p>
+<h2 id="防尘盖">防尘盖</h2>
+<p>一般是适配某一种配列的。</p>
+<h2 id="PCB板">PCB板</h2>
+<p>键盘的核心处理模块</p>
+<h2 id="定位板">定位板</h2>
+<p>在PCB之上的用于对轴进行定位的一块板。</p>
+<p><img src="https://tse1-mm.cn.bing.net/th/id/R-C.8d161ffced0f52acf7369f68ea32e67c?rik=R7AhGXZ%2fmrKpxA&amp;riu=http%3a%2f%2fi1.hdslb.com%2fbfs%2farchive%2fb3633c7dc1bcdc631be161e23bbcdb6047548d38.jpg&amp;ehk=jnCxSI%2bgpNz9tZNX5qZyEdgc0aFRNRFnPIYkFV2Y%2f%2f8%3d&amp;risl=&amp;pid=ImgRaw&amp;r=0" alt=""></p>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          
+          <li class="next">
+            <a href="/cn/1630769190/" data-toggle="tooltip" data-placement="top" title="Java8源码之——LinkedList">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
         
-        <a href="#Java" title="Java" rel="6">Java</a>
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
         
-        <a href="#jdk" title="jdk" rel="3">jdk</a>
+
         
-        <a href="#source code" title="source code" rel="3">source code</a>
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=硬件系列之——客制化键盘基本概念&body=Hi,I found this website and thought you might like it https://blog.ka2x.net/cn/1630770087/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
         
-        <a href="#TCP" title="TCP" rel="1">TCP</a>
-        
-        <a href="#SSD" title="SSD" rel="1">SSD</a>
-        
-        <a href="#algorithm" title="algorithm" rel="3">algorithm</a>
-        
-        <a href="#regex" title="regex" rel="1">regex</a>
-        
-        <a href="#peripheral" title="peripheral" rel="1">peripheral</a>
-        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: 'f746a1baf87a3a82303e',
+      clientSecret: 'c1e6f2d24cdfded34a54769273d2f8064b337245',
+      repo: 'ka2x.github.io',
+      owner: 'ka2x',
+      admin: 'ka2x',
+      id: 'Sat Sep 04 2021 23:41:27 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'zh-CN',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
       </div>
 
-      <!-- 标签列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="Java">
-          <span class="tag-text">Java</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/1630301212/">
-            <h2 class="post-title">
-              Java8源码之——Queue
-              
-              -- cn
-              
-            </h2>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/1629034938/">
-            <h2 class="post-title">
-              青蛙跳多步问题——斐波那契、青蛙跳台阶、三步问题的拓展
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              刷经典算法时，发现了三个算法的规律，便拓展设计了这么一个算法
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/1629296718/">
-            <h2 class="post-title">
-              简单正则表达式匹配算法
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              只支持.和*的正则表达式匹配算法
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/1629219469/">
-            <h2 class="post-title">
-              好玩的算法之——荷兰国旗问题
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              刷算法时发现的简单好玩的荷兰国旗问题的各种解法
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/1630769190/">
-            <h2 class="post-title">
-              Java8源码之——LinkedList
-              
-              -- cn
-              
-            </h2>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/1630303287/">
-            <h2 class="post-title">
-              Java8源码之——HashMap
-              
-              -- cn
-              
-            </h2>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="jdk">
-          <span class="tag-text">jdk</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/1630301212/">
-            <h2 class="post-title">
-              Java8源码之——Queue
-              
-              -- cn
-              
-            </h2>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/1630769190/">
-            <h2 class="post-title">
-              Java8源码之——LinkedList
-              
-              -- cn
-              
-            </h2>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/1630303287/">
-            <h2 class="post-title">
-              Java8源码之——HashMap
-              
-              -- cn
-              
-            </h2>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="source code">
-          <span class="tag-text">source code</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/1630301212/">
-            <h2 class="post-title">
-              Java8源码之——Queue
-              
-              -- cn
-              
-            </h2>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/1630769190/">
-            <h2 class="post-title">
-              Java8源码之——LinkedList
-              
-              -- cn
-              
-            </h2>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/1630303287/">
-            <h2 class="post-title">
-              Java8源码之——HashMap
-              
-              -- cn
-              
-            </h2>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="TCP">
-          <span class="tag-text">TCP</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/1629032754/">
-            <h2 class="post-title">
-              入门TCP的机制及握手挥手
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              个人对于面试或者开发有用的TCP基础知识的总结
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="SSD">
-          <span class="tag-text">SSD</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/1628609252/">
-            <h2 class="post-title">
-              固态硬盘SSD sata接口 m2接口及相关协议的关系
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              总结了在挑选固态硬盘盒的时候出现的一些问题
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="algorithm">
-          <span class="tag-text">algorithm</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/1629034938/">
-            <h2 class="post-title">
-              青蛙跳多步问题——斐波那契、青蛙跳台阶、三步问题的拓展
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              刷经典算法时，发现了三个算法的规律，便拓展设计了这么一个算法
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/1629296718/">
-            <h2 class="post-title">
-              简单正则表达式匹配算法
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              只支持.和*的正则表达式匹配算法
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-        <div class="post-preview">
-          <a href="/cn/1629219469/">
-            <h2 class="post-title">
-              好玩的算法之——荷兰国旗问题
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              刷算法时发现的简单好玩的荷兰国旗问题的各种解法
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="regex">
-          <span class="tag-text">regex</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/1629296718/">
-            <h2 class="post-title">
-              简单正则表达式匹配算法
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              只支持.和*的正则表达式匹配算法
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
-      <div class="one-tag-list">
-        <span class="fa fa-tag listing-seperator" id="peripheral">
-          <span class="tag-text">peripheral</span>
-        </span>
-        
-        <div class="post-preview">
-          <a href="/cn/1630770087/">
-            <h2 class="post-title">
-              硬件系列之——客制化键盘基本概念
-              
-              -- cn
-              
-            </h2>
-            
-            <h3 class="post-subtitle">
-              前阵子入手了客制化键盘，简单谈谈入门客制化需要注意哪些问题
-            </h3>
-            
-          </a>
-        </div>
-        <hr>
-        
-      </div>
-      
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
 
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">目录</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">基本概念</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%AE%A2%E5%88%B6%E5%8C%96"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">客制化</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%85%8D%E5%88%97"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">配列</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%BF%9E%E6%8E%A5%E6%A8%A1%E5%BC%8F"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">连接模式</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%94%AE%E4%BD%8D%E5%86%B2%E7%AA%81"><span class="toc-nav-number">1.4.</span> <span class="toc-nav-text">键位冲突</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%A9%B1%E5%8A%A8"><span class="toc-nav-number">1.5.</span> <span class="toc-nav-text">驱动</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">基本组成</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%94%AE%E5%B8%BD"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">键帽</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%BD%B4"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">轴</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-nav-number">2.2.1.</span> <span class="toc-nav-text">基本概念</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E8%BD%B4"><span class="toc-nav-number">2.2.2.</span> <span class="toc-nav-text">常见的轴</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%BB%91%E8%BD%B4"><span class="toc-nav-number">2.2.2.1.</span> <span class="toc-nav-text">黑轴</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E8%8C%B6%E8%BD%B4"><span class="toc-nav-number">2.2.2.2.</span> <span class="toc-nav-text">茶轴</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E9%9D%92%E8%BD%B4"><span class="toc-nav-number">2.2.2.3.</span> <span class="toc-nav-text">青轴</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%BA%A2%E8%BD%B4"><span class="toc-nav-number">2.2.2.4.</span> <span class="toc-nav-text">红轴</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#%E7%99%BD%E8%BD%B4"><span class="toc-nav-number">2.2.2.5.</span> <span class="toc-nav-text">白轴</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E9%98%B2%E5%B0%98%E7%9B%96"><span class="toc-nav-number">2.3.</span> <span class="toc-nav-text">防尘盖</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#PCB%E6%9D%BF"><span class="toc-nav-number">2.4.</span> <span class="toc-nav-text">PCB板</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%AE%9A%E4%BD%8D%E6%9D%BF"><span class="toc-nav-number">2.5.</span> <span class="toc-nav-text">定位板</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+            <a class="tag" href="/tags/#peripheral" title="peripheral">peripheral</a>
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+        </ul>
+        
+      </div>
     </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
