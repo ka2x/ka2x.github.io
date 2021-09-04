@@ -243,6 +243,17 @@
           
           
           <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/archive/">
               
               归档
@@ -257,17 +268,6 @@
             <a href="/about/">
               
               关于
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/categories/">
-              
-              分类
               
               
             </a>
@@ -501,6 +501,18 @@
   <div class="tags">
     
     
+    <a href="/tags/#Java" title="Java" rel="6">Java</a>
+    
+    
+    
+    <a href="/tags/#jdk" title="jdk" rel="3">jdk</a>
+    
+    
+    
+    <a href="/tags/#source code" title="source code" rel="3">source code</a>
+    
+    
+    
     <a href="/tags/#TCP" title="TCP" rel="1">TCP</a>
     
     
@@ -513,19 +525,7 @@
     
     
     
-    <a href="/tags/#Java" title="Java" rel="5">Java</a>
-    
-    
-    
     <a href="/tags/#regex" title="regex" rel="1">regex</a>
-    
-    
-    
-    <a href="/tags/#jdk" title="jdk" rel="2">jdk</a>
-    
-    
-    
-    <a href="/tags/#source code" title="source code" rel="2">source code</a>
     
     
   </div>
@@ -539,6 +539,10 @@
 <h5><a href="/">最近博文</a></h5>
 <div class="widget">
   <ul>
+    
+    <a href="../cn/1630769190/">
+      <li>Java8源码之——LinkedList</li>
+    </a>
     
     <a href="../cn/1630303287/">
       <li>Java8源码之——HashMap</li>
@@ -556,10 +560,6 @@
       <li>好玩的算法之——荷兰国旗问题</li>
     </a>
     
-    <a href="../cn/1629034938/">
-      <li>青蛙跳多步问题——斐波那契、青蛙跳台阶、三步问题的拓展</li>
-    </a>
-    
   </ul>
 </div>
 
@@ -570,7 +570,7 @@
 
 <h5><a href="/archives/">归档</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archives/2021/08/">August 2021</a><span class="archive-list-count">7</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../archives/2021/09/">September 2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="../archives/2021/08/">August 2021</a><span class="archive-list-count">7</span></li></ul>
 </div>
 
 
@@ -582,6 +582,10 @@
 <div class="widget">
   <ul>
     
+    <a href="/categories/#software">
+      <li>software</li>
+    </a>
+    
     <a href="/categories/#network">
       <li>network</li>
     </a>
@@ -592,10 +596,6 @@
     
     <a href="/categories/#algorithm">
       <li>algorithm</li>
-    </a>
-    
-    <a href="/categories/#software">
-      <li>software</li>
     </a>
     
   </ul>
@@ -1083,5 +1083,20 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>

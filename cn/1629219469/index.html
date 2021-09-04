@@ -243,6 +243,17 @@
           
           
           <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/archive/">
               
               归档
@@ -257,17 +268,6 @@
             <a href="/about/">
               
               关于
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/categories/">
-              
-              分类
               
               
             </a>
@@ -381,9 +381,9 @@
           <div class="post-heading">
             <div class="tags">
               
-              <a class="tag" href="/tags/#algorithm" title="algorithm">algorithm</a>
-              
               <a class="tag" href="/tags/#Java" title="Java">Java</a>
+              
+              <a class="tag" href="/tags/#algorithm" title="algorithm">algorithm</a>
               
             </div>
             <h1>好玩的算法之——荷兰国旗问题</h1>
@@ -464,44 +464,35 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h2 id="问题来源">问题来源</h2>
-<p>我们知道荷兰国旗就是长这个样</p>
+        <h2 id="问题来源"><a href="#问题来源" class="headerlink" title="问题来源"></a>问题来源</h2><p>我们知道荷兰国旗就是长这个样</p>
 <p><img src="https://img.ka2x.net/202108300000339.png" alt=""></p>
-<p>计算机科学家 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%89%BE%E5%85%B9%E6%A0%BC%C2%B7%E8%BF%AA%E7%A7%91%E6%96%AF%E5%BD%BB">Edsger W. Dijkstra</a> 就提出了这么一个问题：</p>
+<p>计算机科学家 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/艾兹格·迪科斯彻">Edsger W. Dijkstra</a> 就提出了这么一个问题：</p>
 <p>假如国旗长以下这个样子，那么怎么将他们的颜色排序好呢？（也就是分三块的问题）</p>
 <p><img src="https://img.ka2x.net/202108300000595.png" alt=""></p>
 <p>荷兰国旗问题描述的是一类问题，并不指代某个具体的问题！</p>
-<h2 id="问题例题">问题例题</h2>
-<h3 id="颜色分类">颜色分类</h3>
-<p>给定一个包含红色、白色和蓝色，一共 n 个元素的数组，原地对它们进行排序，使得相同颜色的元素相邻，并按照红色、白色、蓝色顺序排列。</p>
+<h2 id="问题例题"><a href="#问题例题" class="headerlink" title="问题例题"></a>问题例题</h2><h3 id="颜色分类"><a href="#颜色分类" class="headerlink" title="颜色分类"></a>颜色分类</h3><p>给定一个包含红色、白色和蓝色，一共 n 个元素的数组，原地对它们进行排序，使得相同颜色的元素相邻，并按照红色、白色、蓝色顺序排列。</p>
 <p>此题中，我们使用整数 0、 1 和 2 分别表示红色、白色和蓝色。</p>
-<h4 id="排序">排序</h4>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Arrays.sort(nums);</span><br></pre></td></tr></table></figure>
+<h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Arrays.sort(nums);</span><br></pre></td></tr></table></figure>
 <p>这种做法最简单。但是时间和空间复杂度都是O(nlogn)。</p>
-<h4 id="单指针两次遍历">单指针两次遍历</h4>
-<p>第一次循环将0交换到前面，第二次循环交换1到前面</p>
+<h4 id="单指针两次遍历"><a href="#单指针两次遍历" class="headerlink" title="单指针两次遍历"></a>单指针两次遍历</h4><p>第一次循环将0交换到前面，第二次循环交换1到前面</p>
 <p>时间复杂度会降到O(n)</p>
 <p>空间复杂度为O(1)</p>
 <p>但是循环两次总是不太快</p>
-<h4 id="快慢双指针遍历交换">快慢双指针遍历交换</h4>
-<p>保存1尾部指针和0尾部指针</p>
+<h4 id="快慢双指针遍历交换"><a href="#快慢双指针遍历交换" class="headerlink" title="快慢双指针遍历交换"></a>快慢双指针遍历交换</h4><p>保存1尾部指针和0尾部指针</p>
 <p>是1就换到1的尾部，是0就换到0的尾部，顺便将可能被换掉的1换到1的尾部。</p>
 <p>时间复杂度O(n)</p>
 <p>空间复杂度O(1)</p>
-<h4 id="头尾双指针遍历交换">头尾双指针遍历交换</h4>
-<p>这次是换0和2，一个从0开始，一个从n-1开始。剩下的自然是1。</p>
+<h4 id="头尾双指针遍历交换"><a href="#头尾双指针遍历交换" class="headerlink" title="头尾双指针遍历交换"></a>头尾双指针遍历交换</h4><p>这次是换0和2，一个从0开始，一个从n-1开始。剩下的自然是1。</p>
 <p>时间复杂度O(n)</p>
 <p>空间复杂度O(1)</p>
 <p>这也是比较主流的解法！</p>
-<h4 id="同化法置值">同化法置值</h4>
-<p>如果所得的结果和具体的值无关，例如只要求分割线的下标，那么可以将所有值同化。</p>
+<h4 id="同化法置值"><a href="#同化法置值" class="headerlink" title="同化法置值"></a>同化法置值</h4><p>如果所得的结果和具体的值无关，例如只要求分割线的下标，那么可以将所有值同化。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sortColors</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n0 = <span class="number">0</span>, n1 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> num = nums[i];</span><br><span class="line">        nums[i] = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(num &lt; <span class="number">2</span>)&#123;</span><br><span class="line">            nums[n1++] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(num &lt; <span class="number">1</span>)&#123;</span><br><span class="line">            nums[n0++] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这里将所有的值同化为012。好处就是不用去交换。</p>
 <p>时间复杂度O(n)</p>
 <p>空间复杂度O(1)</p>
 <p>对于这道题来说，同化的结果与原先的值是一样的。</p>
-<h3 id="数组分三块">数组分三块</h3>
-<p>给定一个数组，比K小的在左边，等于K的在中间，比K大的在右边</p>
+<h3 id="数组分三块"><a href="#数组分三块" class="headerlink" title="数组分三块"></a>数组分三块</h3><p>给定一个数组，比K小的在左边，等于K的在中间，比K大的在右边</p>
 <p>解法与上述颜色题一致</p>
 <p>这道题用上述的同化法将会省去交换的步骤。</p>
 
@@ -676,9 +667,9 @@
           </h5>
           <div class="tags">
             
-            <a class="tag" href="/tags/#algorithm" title="algorithm">algorithm</a>
-            
             <a class="tag" href="/tags/#Java" title="Java">Java</a>
+            
+            <a class="tag" href="/tags/#algorithm" title="algorithm">algorithm</a>
             
           </div>
         </section>
@@ -1218,5 +1209,20 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
 
 
 		
-	</body>
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
