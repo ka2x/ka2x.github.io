@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.ka2x.net/cn/1630810689/</loc>
+    
+    <lastmod>2021-09-05</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.ka2x.net/cn/1630770087/</loc>
     
     <lastmod>2021-09-04</lastmod>
@@ -102,7 +109,7 @@
 
   <url>
     <loc>https://blog.ka2x.net/</loc>
-    <lastmod>2021-09-04</lastmod>
+    <lastmod>2021-09-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -110,56 +117,56 @@
   
   <url>
     <loc>https://blog.ka2x.net/tags/Java/</loc>
-    <lastmod>2021-09-04</lastmod>
+    <lastmod>2021-09-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.ka2x.net/tags/jdk/</loc>
-    <lastmod>2021-09-04</lastmod>
+    <lastmod>2021-09-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.ka2x.net/tags/source-code/</loc>
-    <lastmod>2021-09-04</lastmod>
+    <lastmod>2021-09-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.ka2x.net/tags/TCP/</loc>
-    <lastmod>2021-09-04</lastmod>
+    <lastmod>2021-09-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.ka2x.net/tags/SSD/</loc>
-    <lastmod>2021-09-04</lastmod>
+    <lastmod>2021-09-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.ka2x.net/tags/algorithm/</loc>
-    <lastmod>2021-09-04</lastmod>
+    <lastmod>2021-09-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.ka2x.net/tags/regex/</loc>
-    <lastmod>2021-09-04</lastmod>
+    <lastmod>2021-09-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.ka2x.net/tags/peripheral/</loc>
-    <lastmod>2021-09-04</lastmod>
+    <lastmod>2021-09-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -168,28 +175,28 @@
   
   <url>
     <loc>https://blog.ka2x.net/categories/software/</loc>
-    <lastmod>2021-09-04</lastmod>
+    <lastmod>2021-09-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.ka2x.net/categories/network/</loc>
-    <lastmod>2021-09-04</lastmod>
+    <lastmod>2021-09-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.ka2x.net/categories/hardware/</loc>
-    <lastmod>2021-09-04</lastmod>
+    <lastmod>2021-09-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.ka2x.net/categories/algorithm/</loc>
-    <lastmod>2021-09-04</lastmod>
+    <lastmod>2021-09-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
