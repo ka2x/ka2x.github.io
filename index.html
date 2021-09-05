@@ -466,6 +466,82 @@
   <!-- top end -->
   
 
+  <a href="/cn/1630830843/">
+    <h2 class="post-title">
+      Java实战——并发编程入门常用的几种方法
+    </h2>
+    <h3 class="post-subtitle">
+      整理了java并发编程几个常用类、方法、保留字的简单使用
+    </h3>
+    <div class="post-content-preview">
+      信号量Semaphore类
+必须指定信号量有多少令牌
+
+
+
+
+方法
+说明
+
+
+
+
+void acquire();
+获取一个令牌，获取不到则阻塞等待别人释放。
+
+
+void release();
+释放一个许可。
+
+
+
+
+原子整型AtomicInteger类
+默认是0
+
+
+
+
+方法
+说明
+
+
+
+
+int getAndIncrement();
+查看当前值，并且加1
+
+
+int get();
+查看当......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by ka2x on
+    2021-09-05
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#Java" title="Java">Java</a>
+    
+    <a href="/tags/#JUC" title="JUC">JUC</a>
+    
+    <a href="/tags/#concurrent" title="concurrent">concurrent</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/cn/1630813918/">
     <h2 class="post-title">
       Java8源码之——Deque
@@ -870,41 +946,6 @@ size、isEmpty、get、set、iterator和listIterator操作以常量时间运行�
 </div>
 <hr>
 
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/1629032754/">
-    <h2 class="post-title">
-      入门TCP的机制及握手挥手
-    </h2>
-    <h3 class="post-subtitle">
-      个人对于面试或者开发有用的TCP基础知识的总结
-    </h3>
-    <div class="post-content-preview">
-      TCP概念TCP，传输控制协议（Transmission Control Protocol），是一种面向连接的、可靠的、基于字节流的传输层通信协议。是为了在不可靠的互联网络上提供可靠的端到端字节流而专门设计的一个传输协议。
-
-不得不提一下UDP，是Internet 协议集支持的一个无连接的传输协议，全名为用户数据报协议（UDP，User Datagram Protocol）。UDP 为应用程......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by ka2x on
-    2021-08-15
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#TCP" title="TCP">TCP</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
 
   <!-- Pager -->
   <ul class="pager">
@@ -953,7 +994,7 @@ size、isEmpty、get、set、iterator和listIterator操作以常量时间运行�
   <div class="tags">
     
     
-    <a href="/tags/#Java" title="Java" rel="8">Java</a>
+    <a href="/tags/#Java" title="Java" rel="9">Java</a>
     
     
     
@@ -984,6 +1025,14 @@ size、isEmpty、get、set、iterator和listIterator操作以常量时间运行�
     <a href="/tags/#peripheral" title="peripheral" rel="1">peripheral</a>
     
     
+    
+    <a href="/tags/#JUC" title="JUC" rel="1">JUC</a>
+    
+    
+    
+    <a href="/tags/#concurrent" title="concurrent" rel="1">concurrent</a>
+    
+    
   </div>
 </section>
 
@@ -995,6 +1044,10 @@ size、isEmpty、get、set、iterator和listIterator操作以常量时间运行�
 <h5><a href="/">最近博文</a></h5>
 <div class="widget">
   <ul>
+    
+    <a href="cn/1630830843/">
+      <li>Java实战——并发编程入门常用的几种方法</li>
+    </a>
     
     <a href="cn/1630813918/">
       <li>Java8源码之——Deque</li>
@@ -1012,10 +1065,6 @@ size、isEmpty、get、set、iterator和listIterator操作以常量时间运行�
       <li>Java8源码之——LinkedList</li>
     </a>
     
-    <a href="cn/1630303287/">
-      <li>Java8源码之——HashMap</li>
-    </a>
-    
   </ul>
 </div>
 
@@ -1026,7 +1075,7 @@ size、isEmpty、get、set、iterator和listIterator操作以常量时间运行�
 
 <h5><a href="/archives/">归档</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/09/">September 2021</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/08/">August 2021</a><span class="archive-list-count">7</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/09/">September 2021</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/08/">August 2021</a><span class="archive-list-count">7</span></li></ul>
 </div>
 
 
