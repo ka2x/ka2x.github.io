@@ -243,17 +243,6 @@
           
           
           <li>
-            <a href="/categories/">
-              
-              分类
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
             <a href="/archive/">
               
               归档
@@ -268,6 +257,17 @@
             <a href="/about/">
               
               关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
               
               
             </a>
@@ -466,9 +466,9 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h1><p>Semaphore类</p>
+        <h1>信号量</h1>
+<p>Semaphore类</p>
 <p>必须指定信号量有多少令牌</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -487,10 +487,9 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h1 id="原子整型"><a href="#原子整型" class="headerlink" title="原子整型"></a>原子整型</h1><p>AtomicInteger类</p>
+<h1>原子整型</h1>
+<p>AtomicInteger类</p>
 <p>默认是0</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -509,10 +508,9 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h1 id="可重入锁"><a href="#可重入锁" class="headerlink" title="可重入锁"></a>可重入锁</h1><p>ReentrantLock类</p>
+<h1>可重入锁</h1>
+<p>ReentrantLock类</p>
 <p>传入参数是公平或者非公平</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -531,11 +529,9 @@
 </tr>
 </tbody>
 </table>
-</div>
 <p>结合Condition类，可以实现更多功能，创建方法如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Condition con = lock.newCondition();</span><br></pre></td></tr></table></figure>
 <p>Condition的方法有：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -558,11 +554,10 @@
 </tr>
 </tbody>
 </table>
-</div>
 <p>这种等待唤醒机制，比单纯的循环要省cpu。</p>
-<h1 id="原生同步锁"><a href="#原生同步锁" class="headerlink" title="原生同步锁"></a>原生同步锁</h1><p>synchronized锁住对象，然后配合Object对象的原生方法进行同步</p>
+<h1>原生同步锁</h1>
+<p>synchronized锁住对象，然后配合Object对象的原生方法进行同步</p>
 <p>Object对象的同步方法：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -585,11 +580,11 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h1 id="线程礼让"><a href="#线程礼让" class="headerlink" title="线程礼让"></a>线程礼让</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Thread.yield();</span><br></pre></td></tr></table></figure>
+<h1>线程礼让</h1>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Thread.yield();</span><br></pre></td></tr></table></figure>
 <p>调用这条语句就能够实现线程重新争夺cpu。一般使用在条件不满足的时候，将cpu礼让给其他线程。</p>
-<h1 id="阻塞队列"><a href="#阻塞队列" class="headerlink" title="阻塞队列"></a>阻塞队列</h1><p>BlockingQueue接口，一般使用LinkedBlockingQueue&lt;&gt;类。尾部入队操作都是加锁的，头部出队操作也是加锁的。</p>
-<div class="table-container">
+<h1>阻塞队列</h1>
+<p>BlockingQueue接口，一般使用LinkedBlockingQueue&lt;&gt;类。尾部入队操作都是加锁的，头部出队操作也是加锁的。</p>
 <table>
 <thead>
 <tr>
@@ -608,11 +603,10 @@
 </tr>
 </tbody>
 </table>
-</div>
 <p>可以像信号量一样玩。</p>
-<h1 id="闭锁"><a href="#闭锁" class="headerlink" title="闭锁"></a>闭锁</h1><p>CountDownLatch类，一般用于等待所有操作完成再继续执行线程，当作一个计数器。</p>
+<h1>闭锁</h1>
+<p>CountDownLatch类，一般用于等待所有操作完成再继续执行线程，当作一个计数器。</p>
 <p>初始化的时候要指定原数。</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -631,7 +625,6 @@
 </tr>
 </tbody>
 </table>
-</div>
 
 
         <hr>
@@ -777,7 +770,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E4%BF%A1%E5%8F%B7%E9%87%8F"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">信号量</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%8E%9F%E5%AD%90%E6%95%B4%E5%9E%8B"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">原子整型</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%8F%AF%E9%87%8D%E5%85%A5%E9%94%81"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">可重入锁</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%8E%9F%E7%94%9F%E5%90%8C%E6%AD%A5%E9%94%81"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">原生同步锁</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%A4%BC%E8%AE%A9"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">线程礼让</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">阻塞队列</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E9%97%AD%E9%94%81"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">闭锁</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">信号量</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">原子整型</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">可重入锁</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">原生同步锁</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">线程礼让</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">6.</span> <span class="toc-nav-text">阻塞队列</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">7.</span> <span class="toc-nav-text">闭锁</span></a></li></ol>
         
         </div>
       </aside>
