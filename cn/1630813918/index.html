@@ -389,7 +389,7 @@
               
             </div>
             <h1>Java8源码之——Deque</h1>
-            <h2 class="subheading"></h2>
+            <h2 class="subheading">一个集成队列和栈功能的双端队列接口</h2>
             <span class="meta">
               Posted by ka2x on
               2021-09-05
@@ -466,11 +466,11 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>简介</h1>
-<p>在两端支持元素插入和移除的线性集合。deque这个名字是“双端队列”的缩写，通常发音为“deck”。</p>
+        <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>在两端支持元素插入和移除的线性集合。deque这个名字是“双端队列”的缩写，通常发音为“deck”。</p>
 <p>与大多数集合一样，添加、删除、获取，这些方法都有一个是抛出异常的，一个是用返回值替代异常的。</p>
 <p>总的来说，Deque就是一个集成了队列和栈功能的双端队列接口。其中的方法很多都会重复。</p>
 <p>针对双端队列的方法总结：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -512,7 +512,9 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>针对队列的方法</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -554,7 +556,9 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>针对栈的方法</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -581,11 +585,11 @@
 </tr>
 </tbody>
 </table>
-<h1>所在包</h1>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> java.util;</span><br></pre></td></tr></table></figure>
-<h1>声明</h1>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Deque</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">Queue</span>&lt;<span class="title">E</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</div>
+<h1 id="所在包"><a href="#所在包" class="headerlink" title="所在包"></a>所在包</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> java.util;</span><br></pre></td></tr></table></figure>
+<h1 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Deque</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">Queue</span>&lt;<span class="title">E</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>直接或间接继承的接口：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -608,44 +612,36 @@
 </tr>
 </tbody>
 </table>
-<h1>方法</h1>
-<h2 id="加入头部">加入头部</h2>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addFirst</span><span class="params">(E e)</span></span>;</span><br></pre></td></tr></table></figure>
+</div>
+<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><h2 id="加入头部"><a href="#加入头部" class="headerlink" title="加入头部"></a>加入头部</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addFirst</span><span class="params">(E e)</span></span>;</span><br></pre></td></tr></table></figure>
 <p>超容量会抛出IllegalStateException异常</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">offerFirst</span><span class="params">(E e)</span></span>;</span><br></pre></td></tr></table></figure>
 <p>超容量就返回false</p>
-<h2 id="加入尾部">加入尾部</h2>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addLast</span><span class="params">(E e)</span></span>;</span><br></pre></td></tr></table></figure>
+<h2 id="加入尾部"><a href="#加入尾部" class="headerlink" title="加入尾部"></a>加入尾部</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addLast</span><span class="params">(E e)</span></span>;</span><br></pre></td></tr></table></figure>
 <p>超容量会抛出IllegalStateException异常</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">offerLast</span><span class="params">(E e)</span></span>;</span><br></pre></td></tr></table></figure>
 <p>超容量就返回false</p>
-<h2 id="移除头部">移除头部</h2>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E <span class="title">removeFirst</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<h2 id="移除头部"><a href="#移除头部" class="headerlink" title="移除头部"></a>移除头部</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E <span class="title">removeFirst</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
 <p>为空，则抛出NoSuchElementException异常</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E <span class="title">pollFirst</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
 <p>为空，则返回null</p>
-<h2 id="移除尾部">移除尾部</h2>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E <span class="title">removeLast</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<h2 id="移除尾部"><a href="#移除尾部" class="headerlink" title="移除尾部"></a>移除尾部</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E <span class="title">removeLast</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
 <p>为空，则抛出NoSuchElementException异常</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E <span class="title">pollLast</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
 <p>为空，则返回null</p>
-<h2 id="浏览头部">浏览头部</h2>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E <span class="title">getFirst</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<h2 id="浏览头部"><a href="#浏览头部" class="headerlink" title="浏览头部"></a>浏览头部</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E <span class="title">getFirst</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
 <p>为空，则抛出NoSuchElementException异常</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E <span class="title">peekFirst</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
 <p>为空，则返回null</p>
-<h2 id="浏览尾部">浏览尾部</h2>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E <span class="title">getLast</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<h2 id="浏览尾部"><a href="#浏览尾部" class="headerlink" title="浏览尾部"></a>浏览尾部</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E <span class="title">getLast</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
 <p>为空，则抛出NoSuchElementException异常</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E <span class="title">peekLast</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
 <p>为空，则返回null</p>
-<h2 id="移除首先出现">移除首先出现</h2>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">removeFirstOccurrence</span><span class="params">(Object o)</span></span>;</span><br></pre></td></tr></table></figure>
+<h2 id="移除首先出现"><a href="#移除首先出现" class="headerlink" title="移除首先出现"></a>移除首先出现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">removeFirstOccurrence</span><span class="params">(Object o)</span></span>;</span><br></pre></td></tr></table></figure>
 <p>失败则返回false</p>
-<h2 id="移除最后出现">移除最后出现</h2>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">removeLastOccurrence</span><span class="params">(Object o)</span></span>;</span><br></pre></td></tr></table></figure>
+<h2 id="移除最后出现"><a href="#移除最后出现" class="headerlink" title="移除最后出现"></a>移除最后出现</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">removeLastOccurrence</span><span class="params">(Object o)</span></span>;</span><br></pre></td></tr></table></figure>
 <p>失败则返回false</p>
-<h2 id="Queue方法">Queue方法</h2>
+<h2 id="Queue方法"><a href="#Queue方法" class="headerlink" title="Queue方法"></a>Queue方法</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -680,9 +676,10 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>加入元素：last处</p>
 <p>移除元素：first处</p>
-<h2 id="Stack方法">Stack方法</h2>
+<h2 id="Stack方法"><a href="#Stack方法" class="headerlink" title="Stack方法"></a>Stack方法</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -701,9 +698,10 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>压入元素：first处</p>
 <p>弹出：first处</p>
-<h2 id="Collection方法">Collection方法</h2>
+<h2 id="Collection方法"><a href="#Collection方法" class="headerlink" title="Collection方法"></a>Collection方法</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -734,6 +732,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>iterator：first到last</p>
 <p>descendingIterator：last到first</p>
 <p>remove：从first开始找</p>
@@ -886,7 +885,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">简介</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">所在包</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">声明</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">方法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8A%A0%E5%85%A5%E5%A4%B4%E9%83%A8"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">加入头部</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8A%A0%E5%85%A5%E5%B0%BE%E9%83%A8"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">加入尾部</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%A7%BB%E9%99%A4%E5%A4%B4%E9%83%A8"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">移除头部</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%A7%BB%E9%99%A4%E5%B0%BE%E9%83%A8"><span class="toc-nav-number">4.4.</span> <span class="toc-nav-text">移除尾部</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%B5%8F%E8%A7%88%E5%A4%B4%E9%83%A8"><span class="toc-nav-number">4.5.</span> <span class="toc-nav-text">浏览头部</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%B5%8F%E8%A7%88%E5%B0%BE%E9%83%A8"><span class="toc-nav-number">4.6.</span> <span class="toc-nav-text">浏览尾部</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%A7%BB%E9%99%A4%E9%A6%96%E5%85%88%E5%87%BA%E7%8E%B0"><span class="toc-nav-number">4.7.</span> <span class="toc-nav-text">移除首先出现</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%A7%BB%E9%99%A4%E6%9C%80%E5%90%8E%E5%87%BA%E7%8E%B0"><span class="toc-nav-number">4.8.</span> <span class="toc-nav-text">移除最后出现</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Queue%E6%96%B9%E6%B3%95"><span class="toc-nav-number">4.9.</span> <span class="toc-nav-text">Queue方法</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Stack%E6%96%B9%E6%B3%95"><span class="toc-nav-number">4.10.</span> <span class="toc-nav-text">Stack方法</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Collection%E6%96%B9%E6%B3%95"><span class="toc-nav-number">4.11.</span> <span class="toc-nav-text">Collection方法</span></a></li></ol></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">简介</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E6%89%80%E5%9C%A8%E5%8C%85"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">所在包</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%A3%B0%E6%98%8E"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">声明</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">方法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8A%A0%E5%85%A5%E5%A4%B4%E9%83%A8"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">加入头部</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8A%A0%E5%85%A5%E5%B0%BE%E9%83%A8"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">加入尾部</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%A7%BB%E9%99%A4%E5%A4%B4%E9%83%A8"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">移除头部</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%A7%BB%E9%99%A4%E5%B0%BE%E9%83%A8"><span class="toc-nav-number">4.4.</span> <span class="toc-nav-text">移除尾部</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%B5%8F%E8%A7%88%E5%A4%B4%E9%83%A8"><span class="toc-nav-number">4.5.</span> <span class="toc-nav-text">浏览头部</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%B5%8F%E8%A7%88%E5%B0%BE%E9%83%A8"><span class="toc-nav-number">4.6.</span> <span class="toc-nav-text">浏览尾部</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%A7%BB%E9%99%A4%E9%A6%96%E5%85%88%E5%87%BA%E7%8E%B0"><span class="toc-nav-number">4.7.</span> <span class="toc-nav-text">移除首先出现</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%A7%BB%E9%99%A4%E6%9C%80%E5%90%8E%E5%87%BA%E7%8E%B0"><span class="toc-nav-number">4.8.</span> <span class="toc-nav-text">移除最后出现</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Queue%E6%96%B9%E6%B3%95"><span class="toc-nav-number">4.9.</span> <span class="toc-nav-text">Queue方法</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Stack%E6%96%B9%E6%B3%95"><span class="toc-nav-number">4.10.</span> <span class="toc-nav-text">Stack方法</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Collection%E6%96%B9%E6%B3%95"><span class="toc-nav-number">4.11.</span> <span class="toc-nav-text">Collection方法</span></a></li></ol></li></ol>
         
         </div>
       </aside>

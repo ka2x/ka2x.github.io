@@ -135,10 +135,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="https://blog.ka2x.net/cn/1630301212/">
+  <link rel="canonical" href="https://blog.ka2x.net/cn/1632412894/">
   <title>
     
-      Java8源码之——Queue - KA2X BLOG
+      Java8源码之——HashSet - KA2X BLOG
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -388,11 +388,11 @@
               <a class="tag" href="/tags/#source code" title="source code">source code</a>
               
             </div>
-            <h1>Java8源码之——Queue</h1>
-            <h2 class="subheading">一个常用的队列接口</h2>
+            <h1>Java8源码之——HashSet</h1>
+            <h2 class="subheading">利用HashMap实现的Set集合类</h2>
             <span class="meta">
               Posted by ka2x on
-              2021-08-30
+              2021-09-24
             </span>
 
 
@@ -400,11 +400,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">2</span> Minutes
+              Estimated Reading Time <span class="post-count">5</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">610</span> In Total
+              Words <span class="post-count">1.1k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -466,139 +466,109 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h1><p>是一个要求按“队列”来处理集合（Collection）中收集的元素而产生的接口。</p>
-<p>队列覆盖了 Collection 的插入（add）、提取（remove）和检查（element）操作并且还自己提供了另一套插入（offer）、提取（poll）和检查（peek）。看似这些方法重复了，但是如果操作失败，那么一个是抛出异常，另一个就是以特殊值返回。</p>
-<p>队列可能不一定是先进先出，因为某些队列的实现结构，会在其中进行排序（例如优先级队列）。但是队列的头都是调用 remove() 或 poll() 将被删除的元素。在 FIFO 队列中，所有的新元素都插入到队列的尾部。其他类型的队列可能使用不同的放置规则。每个Queue实现必须指定其排序属性。</p>
-<h1 id="所在包"><a href="#所在包" class="headerlink" title="所在包"></a>所在包</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> java.util;</span><br></pre></td></tr></table></figure>
-<h1 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Queue</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">Collection</span>&lt;<span class="title">E</span>&gt; </span></span><br></pre></td></tr></table></figure>
-<p>集合接口的单参数泛型子接口。</p>
-<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><h2 id="入队1"><a href="#入队1" class="headerlink" title="入队1"></a>入队1</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span></span>;</span><br></pre></td></tr></table></figure>
-<p>如果容量够，将指定的元素插入到队列中。失败会出现 IllegalStateException 异常。</p>
-<h2 id="入队2"><a href="#入队2" class="headerlink" title="入队2"></a>入队2</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">offer</span><span class="params">(E e)</span></span>;</span><br></pre></td></tr></table></figure>
-<p>如果容量够，将指定的元素插入到队列中。当使用一个容量受限的队列时，这种方法通常是优于add方法，后者只能插入元素失败抛出 IllegalStateException  异常，而前者返回false。</p>
-<h2 id="出队1"><a href="#出队1" class="headerlink" title="出队1"></a>出队1</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E <span class="title">remove</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
-<p>也就是出队。如果队列空的，抛出 NoSuchElementException 异常。</p>
-<h2 id="出队2"><a href="#出队2" class="headerlink" title="出队2"></a>出队2</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E <span class="title">poll</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
-<p>出队。如果队列空，返回 null。</p>
-<h2 id="查看队头元素1"><a href="#查看队头元素1" class="headerlink" title="查看队头元素1"></a>查看队头元素1</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E <span class="title">element</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
-<p>检索但不删除此队列的头部。这个方法如果队列空会抛出 NoSuchElementException 异常</p>
-<h2 id="查看队头元素2"><a href="#查看队头元素2" class="headerlink" title="查看队头元素2"></a>查看队头元素2</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">E <span class="title">peek</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
-<p>检索但不删除此队列的头部。这个方法如果队列空就返回null。</p>
-<h2 id="父接口继承方法"><a href="#父接口继承方法" class="headerlink" title="父接口继承方法"></a>父接口继承方法</h2><p>Collection 自带的，而且未被覆盖的方法：</p>
+        <h1 id="总体介绍"><a href="#总体介绍" class="headerlink" title="总体介绍"></a>总体介绍</h1><p>集合Set的一种实现方式，利用HashMap的key是唯一的特性来实现，value都设置为PRESENT对象。</p>
+<p>不保证线程安全。可以使用以下来创建一个线程安全的：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set s = Collections.synchronizedSet(<span class="keyword">new</span> HashSet(...));</span><br></pre></td></tr></table></figure>
+<p>其实也就是用装饰器模式，包装了一层synchronized方法。</p>
+<p>迭代器在创建出来之后的每一次使用都会判断是否原集合发生过模式改变（状态改变），是则抛出ConcurrentModificationException。这种只能用于检测错误，而不能做硬保证，所以不能基于此编写同步逻辑。这与大多数集合类一致。</p>
+<h1 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> java.util;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HashSet</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">extends</span> <span class="title">AbstractSet</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">Set</span>&lt;<span class="title">E</span>&gt;, <span class="title">Cloneable</span>, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span></span></span><br></pre></td></tr></table></figure>
+<p>直接或者间接继承</p>
 <div class="table-container">
 <table>
 <thead>
 <tr>
-<th>方法</th>
+<th>类</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>int size();</td>
+<td>AbstractSet<E></td>
+<td>抽象集合</td>
 </tr>
 <tr>
-<td>boolean isEmpty();</td>
-</tr>
-<tr>
-<td>boolean contains(Object o);</td>
-</tr>
-<tr>
-<td>Iterator<E> iterator();</td>
-</tr>
-<tr>
-<td>Object[] toArray();</td>
-</tr>
-<tr>
-<td><T> T[] toArray(T[] a);</td>
-</tr>
-<tr>
-<td>boolean add(E e);</td>
-</tr>
-<tr>
-<td>boolean remove(Object o);</td>
-</tr>
-<tr>
-<td>boolean containsAll(Collection&lt;?&gt; c);</td>
-</tr>
-<tr>
-<td>boolean addAll(Collection&lt;? extends E&gt; c);</td>
-</tr>
-<tr>
-<td>boolean removeAll(Collection&lt;?&gt; c);</td>
-</tr>
-<tr>
-<td>default boolean removeIf(Predicate&lt;? super E&gt; filter)</td>
-</tr>
-<tr>
-<td>boolean retainAll(Collection&lt;?&gt; c);</td>
-</tr>
-<tr>
-<td>void clear();</td>
-</tr>
-<tr>
-<td>boolean equals(Object o);</td>
-</tr>
-<tr>
-<td>int hashCode();</td>
-</tr>
-<tr>
-<td>default Spliterator<E> spliterator()</td>
-</tr>
-<tr>
-<td>default Stream<E> stream()</td>
-</tr>
-<tr>
-<td>default Stream<E> parallelStream()</td>
+<td>AbstractCollection<E></td>
+<td>抽象集合</td>
 </tr>
 </tbody>
 </table>
 </div>
-<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><p>Queue的实现类，一般都会先继承 Queue 的抽象实现类 AbstractQueue，从而间接去实现 Queue 接口。</p>
+<p>直接或者间接实现</p>
 <div class="table-container">
 <table>
 <thead>
 <tr>
-<th>实现类</th>
+<th>接口</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>java.util.LinkedList</td>
+<td>Set<E></td>
+<td>集合</td>
 </tr>
 <tr>
-<td>java.util.PriorityQueue</td>
+<td>Cloneable</td>
+<td>可以克隆</td>
 </tr>
 <tr>
-<td>java.util.concurrent.LinkedBlockingQueue</td>
+<td>java.io.Serializable</td>
+<td>可以序列化</td>
 </tr>
 <tr>
-<td>java.util.concurrent.BlockingQueue</td>
+<td>Collection<E></td>
+<td>集合</td>
 </tr>
 <tr>
-<td>java.util.concurrent.ArrayBlockingQueue</td>
-</tr>
-<tr>
-<td>java.util.concurrent.LinkedBlockingQueue</td>
-</tr>
-<tr>
-<td>java.util.concurrent.PriorityBlockingQueue</td>
+<td>Iterable<E></td>
+<td>可迭代</td>
 </tr>
 </tbody>
 </table>
 </div>
+<h1 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h1><h2 id="序列号"><a href="#序列号" class="headerlink" title="序列号"></a>序列号</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = -<span class="number">5024744406713321676L</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">transient</span> HashMap&lt;E,Object&gt; map;</span><br></pre></td></tr></table></figure>
+<p>用HashMap辅助实现Set功能</p>
+<h2 id="虚拟现值"><a href="#虚拟现值" class="headerlink" title="虚拟现值"></a>虚拟现值</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Object PRESENT = <span class="keyword">new</span> Object();</span><br></pre></td></tr></table></figure>
+<p>用来作为HashMap的value的公用对象。</p>
+<h1 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h1><h2 id="空参"><a href="#空参" class="headerlink" title="空参"></a>空参</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">HashSet</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="指定数据集"><a href="#指定数据集" class="headerlink" title="指定数据集"></a>指定数据集</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">HashSet</span><span class="params">(Collection&lt;? extends E&gt; c)</span> </span>&#123;</span><br><span class="line">    map = <span class="keyword">new</span> HashMap&lt;&gt;(Math.max((<span class="keyword">int</span>) (c.size()/<span class="number">.75f</span>) + <span class="number">1</span>, <span class="number">16</span>));</span><br><span class="line">    addAll(c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>生成HashMap的初始容量为c.size()/.75f+1，但最小为16。</p>
+<blockquote>
+<p>为什么设置为c.size()/.75f+1？</p>
+<p>其实数组长度*装载因子\=扩容阈值，而HashMap初始化指定的initialCapacity，最后是设置threshold扩容阈值为最小大于initialCapacity的2的幂。</p>
+</blockquote>
+<h2 id="指定初始容量和装载因子"><a href="#指定初始容量和装载因子" class="headerlink" title="指定初始容量和装载因子"></a>指定初始容量和装载因子</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">HashSet</span><span class="params">(<span class="keyword">int</span> initialCapacity, <span class="keyword">float</span> loadFactor)</span> </span>&#123;</span><br><span class="line">    map = <span class="keyword">new</span> HashMap&lt;&gt;(initialCapacity, loadFactor);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="指定初始容量"><a href="#指定初始容量" class="headerlink" title="指定初始容量"></a>指定初始容量</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">HashSet</span><span class="params">(<span class="keyword">int</span> initialCapacity)</span> </span>&#123;</span><br><span class="line">    map = <span class="keyword">new</span> HashMap&lt;&gt;(initialCapacity);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="指定初始容量和装载因子的链式创建"><a href="#指定初始容量和装载因子的链式创建" class="headerlink" title="指定初始容量和装载因子的链式创建"></a>指定初始容量和装载因子的链式创建</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HashSet(<span class="keyword">int</span> initialCapacity, <span class="keyword">float</span> loadFactor, <span class="keyword">boolean</span> dummy) &#123;</span><br><span class="line">    map = <span class="keyword">new</span> LinkedHashMap&lt;&gt;(initialCapacity, loadFactor);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><p>基本都是借助HashMap的内置方法。</p>
+<h2 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Iterator&lt;E&gt; <span class="title">iterator</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> map.keySet().iterator();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="个数"><a href="#个数" class="headerlink" title="个数"></a>个数</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">size</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> map.size();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="判空"><a href="#判空" class="headerlink" title="判空"></a>判空</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isEmpty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> map.isEmpty();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="包含"><a href="#包含" class="headerlink" title="包含"></a>包含</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">contains</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> map.containsKey(o);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="加入"><a href="#加入" class="headerlink" title="加入"></a>加入</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> map.put(e, PRESENT)==<span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>将PRESENT对象加入。</p>
+<h2 id="移除"><a href="#移除" class="headerlink" title="移除"></a>移除</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">remove</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> map.remove(o)==PRESENT;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>移除之后应该是返回PRESENT的。</p>
+<h2 id="清除"><a href="#清除" class="headerlink" title="清除"></a>清除</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    map.clear();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="克隆"><a href="#克隆" class="headerlink" title="克隆"></a>克隆</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">clone</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        HashSet&lt;E&gt; newSet = (HashSet&lt;E&gt;) <span class="keyword">super</span>.clone();</span><br><span class="line">        newSet.map = (HashMap&lt;E, Object&gt;) map.clone();</span><br><span class="line">        <span class="keyword">return</span> newSet;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (CloneNotSupportedException e) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> InternalError(e);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>调用父类的clone，拷贝这个类。之后调用HashMap的clone拷贝map及里边的数据。</p>
+<p>如果没有实现cloneable接口，抓取CloneNotSupportedException异常，InternalError抛出，表示在Java虚拟机中发生了一些意外的内部错误。</p>
+<h2 id="写对象"><a href="#写对象" class="headerlink" title="写对象"></a>写对象</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">writeObject</span><span class="params">(java.io.ObjectOutputStream s)</span></span></span><br><span class="line"><span class="function">    <span class="keyword">throws</span> java.io.IOException </span>&#123;</span><br><span class="line">    <span class="comment">// Write out any hidden serialization magic</span></span><br><span class="line">    s.defaultWriteObject();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Write out HashMap capacity and load factor</span></span><br><span class="line">    s.writeInt(map.capacity());</span><br><span class="line">    s.writeFloat(map.loadFactor());</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Write out size</span></span><br><span class="line">    s.writeInt(map.size());</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Write out all elements in the proper order.</span></span><br><span class="line">    <span class="keyword">for</span> (E e : map.keySet())</span><br><span class="line">        s.writeObject(e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>将类本身、map的容量、map的装载因子、map的size、map的每个元素。</p>
+<h2 id="读对象"><a href="#读对象" class="headerlink" title="读对象"></a>读对象</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">readObject</span><span class="params">(java.io.ObjectInputStream s)</span></span></span><br><span class="line"><span class="function">    <span class="keyword">throws</span> java.io.IOException, ClassNotFoundException </span>&#123;</span><br><span class="line">    <span class="comment">// Read in any hidden serialization magic</span></span><br><span class="line">    s.defaultReadObject();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Read capacity and verify non-negative.</span></span><br><span class="line">    <span class="keyword">int</span> capacity = s.readInt();</span><br><span class="line">    <span class="keyword">if</span> (capacity &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> InvalidObjectException(<span class="string">&quot;Illegal capacity: &quot;</span> +</span><br><span class="line">                                         capacity);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Read load factor and verify positive and non NaN.</span></span><br><span class="line">    <span class="keyword">float</span> loadFactor = s.readFloat();</span><br><span class="line">    <span class="keyword">if</span> (loadFactor &lt;= <span class="number">0</span> || Float.isNaN(loadFactor)) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> InvalidObjectException(<span class="string">&quot;Illegal load factor: &quot;</span> +</span><br><span class="line">                                         loadFactor);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Read size and verify non-negative.</span></span><br><span class="line">    <span class="keyword">int</span> size = s.readInt();</span><br><span class="line">    <span class="keyword">if</span> (size &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> InvalidObjectException(<span class="string">&quot;Illegal size: &quot;</span> +</span><br><span class="line">                                         size);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// Set the capacity according to the size and load factor ensuring that</span></span><br><span class="line">    <span class="comment">// the HashMap is at least 25% full but clamping to maximum capacity.</span></span><br><span class="line">    capacity = (<span class="keyword">int</span>) Math.min(size * Math.min(<span class="number">1</span> / loadFactor, <span class="number">4.0f</span>),</span><br><span class="line">            HashMap.MAXIMUM_CAPACITY);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Constructing the backing map will lazily create an array when the first element is</span></span><br><span class="line">    <span class="comment">// added, so check it before construction. Call HashMap.tableSizeFor to compute the</span></span><br><span class="line">    <span class="comment">// actual allocation size. Check Map.Entry[].class since it&#x27;s the nearest public type to</span></span><br><span class="line">    <span class="comment">// what is actually created.</span></span><br><span class="line"></span><br><span class="line">    SharedSecrets.getJavaOISAccess()</span><br><span class="line">                 .checkArray(s, Map.Entry[].class, HashMap.tableSizeFor(capacity));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Create backing HashMap</span></span><br><span class="line">    map = (((HashSet&lt;?&gt;)<span class="keyword">this</span>) <span class="keyword">instanceof</span> LinkedHashSet ?</span><br><span class="line">           <span class="keyword">new</span> LinkedHashMap&lt;E,Object&gt;(capacity, loadFactor) :</span><br><span class="line">           <span class="keyword">new</span> HashMap&lt;E,Object&gt;(capacity, loadFactor));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Read in all elements in the proper order.</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;size; i++) &#123;</span><br><span class="line">        <span class="meta">@SuppressWarnings(&quot;unchecked&quot;)</span></span><br><span class="line">            E e = (E) s.readObject();</span><br><span class="line">        map.put(e, PRESENT);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>根据writeObject的顺序，将相关数据读出，然后赋值或者put进map。</p>
+<h2 id="并行迭代器"><a href="#并行迭代器" class="headerlink" title="并行迭代器"></a>并行迭代器</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Spliterator&lt;E&gt; <span class="title">spliterator</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> HashMap.KeySpliterator&lt;E,Object&gt;(map, <span class="number">0</span>, -<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>并行计算用到的迭代器。</p>
 
 
         <hr>
         <!-- Pager -->
         <ul class="pager">
           
-          <li class="previous">
-            <a href="/cn/1630303287/" data-toggle="tooltip" data-placement="top" title="Java8源码之——HashMap">&larr; Previous Post</a>
-          </li>
-          
           
           <li class="next">
-            <a href="/cn/1629296718/" data-toggle="tooltip" data-placement="top" title="算法——简单正则表达式匹配算法">Next Post &rarr;</a>
+            <a href="/cn/1631109779/" data-toggle="tooltip" data-placement="top" title="Java8源码之——Vector">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -647,7 +617,7 @@
       </a>
     </li>
     <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=Java8源码之——Queue&body=Hi,I found this website and thought you might like it https://blog.ka2x.net/cn/1630301212/">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Java8源码之——HashSet&body=Hi,I found this website and thought you might like it https://blog.ka2x.net/cn/1632412894/">
         <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
       </a>
     </li>
@@ -682,7 +652,7 @@
       repo: 'ka2x.github.io',
       owner: 'ka2x',
       admin: 'ka2x',
-      id: 'Mon Aug 30 2021 13:26:52 GMT+0800', // Ensure uniqueness and length less than 50
+      id: 'Fri Sep 24 2021 00:01:34 GMT+0800', // Ensure uniqueness and length less than 50
       distractionFreeMode: false, // Facebook-like distraction free mode
       perPage: 10,
       pagerDirection: 'last',
@@ -735,7 +705,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">目录</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">介绍</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E6%89%80%E5%9C%A8%E5%8C%85"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">所在包</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%A3%B0%E6%98%8E"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">声明</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">方法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%A5%E9%98%9F1"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">入队1</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%A5%E9%98%9F2"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">入队2</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%87%BA%E9%98%9F1"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">出队1</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%87%BA%E9%98%9F2"><span class="toc-nav-number">4.4.</span> <span class="toc-nav-text">出队2</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9F%A5%E7%9C%8B%E9%98%9F%E5%A4%B4%E5%85%83%E7%B4%A01"><span class="toc-nav-number">4.5.</span> <span class="toc-nav-text">查看队头元素1</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%9F%A5%E7%9C%8B%E9%98%9F%E5%A4%B4%E5%85%83%E7%B4%A02"><span class="toc-nav-number">4.6.</span> <span class="toc-nav-text">查看队头元素2</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%88%B6%E6%8E%A5%E5%8F%A3%E7%BB%A7%E6%89%BF%E6%96%B9%E6%B3%95"><span class="toc-nav-number">4.7.</span> <span class="toc-nav-text">父接口继承方法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">实现</span></a></li></ol>
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E6%80%BB%E4%BD%93%E4%BB%8B%E7%BB%8D"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">总体介绍</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%A3%B0%E6%98%8E"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">声明</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E5%B1%9E%E6%80%A7"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">属性</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%BA%8F%E5%88%97%E5%8F%B7"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">序列号</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%93%88%E5%B8%8C%E8%A1%A8"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">哈希表</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%99%9A%E6%8B%9F%E7%8E%B0%E5%80%BC"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">虚拟现值</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95"><span class="toc-nav-number">4.</span> <span class="toc-nav-text">构造方法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%A9%BA%E5%8F%82"><span class="toc-nav-number">4.1.</span> <span class="toc-nav-text">空参</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%8C%87%E5%AE%9A%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-nav-number">4.2.</span> <span class="toc-nav-text">指定数据集</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%8C%87%E5%AE%9A%E5%88%9D%E5%A7%8B%E5%AE%B9%E9%87%8F%E5%92%8C%E8%A3%85%E8%BD%BD%E5%9B%A0%E5%AD%90"><span class="toc-nav-number">4.3.</span> <span class="toc-nav-text">指定初始容量和装载因子</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%8C%87%E5%AE%9A%E5%88%9D%E5%A7%8B%E5%AE%B9%E9%87%8F"><span class="toc-nav-number">4.4.</span> <span class="toc-nav-text">指定初始容量</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%8C%87%E5%AE%9A%E5%88%9D%E5%A7%8B%E5%AE%B9%E9%87%8F%E5%92%8C%E8%A3%85%E8%BD%BD%E5%9B%A0%E5%AD%90%E7%9A%84%E9%93%BE%E5%BC%8F%E5%88%9B%E5%BB%BA"><span class="toc-nav-number">4.5.</span> <span class="toc-nav-text">指定初始容量和装载因子的链式创建</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-nav-number">5.</span> <span class="toc-nav-text">方法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="toc-nav-number">5.1.</span> <span class="toc-nav-text">迭代器</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E4%B8%AA%E6%95%B0"><span class="toc-nav-number">5.2.</span> <span class="toc-nav-text">个数</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%88%A4%E7%A9%BA"><span class="toc-nav-number">5.3.</span> <span class="toc-nav-text">判空</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8C%85%E5%90%AB"><span class="toc-nav-number">5.4.</span> <span class="toc-nav-text">包含</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%8A%A0%E5%85%A5"><span class="toc-nav-number">5.5.</span> <span class="toc-nav-text">加入</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E7%A7%BB%E9%99%A4"><span class="toc-nav-number">5.6.</span> <span class="toc-nav-text">移除</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E6%B8%85%E9%99%A4"><span class="toc-nav-number">5.7.</span> <span class="toc-nav-text">清除</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%85%8B%E9%9A%86"><span class="toc-nav-number">5.8.</span> <span class="toc-nav-text">克隆</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%86%99%E5%AF%B9%E8%B1%A1"><span class="toc-nav-number">5.9.</span> <span class="toc-nav-text">写对象</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E8%AF%BB%E5%AF%B9%E8%B1%A1"><span class="toc-nav-number">5.10.</span> <span class="toc-nav-text">读对象</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#%E5%B9%B6%E8%A1%8C%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="toc-nav-number">5.11.</span> <span class="toc-nav-text">并行迭代器</span></a></li></ol></li></ol>
         
         </div>
       </aside>

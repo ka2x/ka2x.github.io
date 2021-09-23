@@ -466,6 +466,47 @@
   <!-- top end -->
   
 
+  <a href="/cn/1632412894/">
+    <h2 class="post-title">
+      Java8源码之——HashSet
+    </h2>
+    <h3 class="post-subtitle">
+      利用HashMap实现的Set集合类
+    </h3>
+    <div class="post-content-preview">
+      总体介绍集合Set的一种实现方式，利用HashMap的key是唯一的特性来实现，value都设置为PRESENT对象。
+不保证线程安全。可以使用以下来创建一个线程安全的：
+1Set s = Collections.synchronizedSet(new HashSet(...));
+其实也就是用装饰器模式，包装了一层synchronized方法。
+迭代器在创建出来之后的每一次使用都会判断是否......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by ka2x on
+    2021-09-24
+  </p>
+  <div class="tags">
+    
+    <a href="/tags/#Java" title="Java">Java</a>
+    
+    <a href="/tags/#jdk" title="jdk">jdk</a>
+    
+    <a href="/tags/#source code" title="source code">source code</a>
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
   <a href="/cn/1631109779/">
     <h2 class="post-title">
       Java8源码之——Vector
@@ -624,14 +665,14 @@ int get();
       Java8源码之——Deque
     </h2>
     <h3 class="post-subtitle">
-      
+      一个集成队列和栈功能的双端队列接口
     </h3>
     <div class="post-content-preview">
-      简介
-在两端支持元素插入和移除的线性集合。deque这个名字是“双端队列”的缩写，通常发音为“deck”。
+      简介在两端支持元素插入和移除的线性集合。deque这个名字是“双端队列”的缩写，通常发音为“deck”。
 与大多数集合一样，添加、删除、获取，这些方法都有一个是抛出异常的，一个是用返回值替代异常的。
 总的来说，Deque就是一个集成了队列和栈功能的双端队列接口。其中的方法很多都会重复。
 针对双端队列的方法总结：
+
 
 
 
@@ -677,13 +718,12 @@ addFirst(......
       Java8源码之——ArrayList
     </h2>
     <h3 class="post-subtitle">
-      
+      一个底层是数组的列表
     </h3>
     <div class="post-content-preview">
-      介绍
-List的数组实现。可以放入null。这个类大致相当于Vector，但是是非同步的。
+      介绍List的数组实现。可以放入null。这个类大致相当于Vector，但是是非同步的。
 size、isEmpty、get、set、iterator和listIterator操作以常量时间运行。加法运算以平摊常数时间运行，也就是说，添加n个元素需要O(n)时间。所有其他操作都在线性时间内运行(粗略地说)。与LinkedList实现相比，这个常数因子较低。
-不支持高并发。模式改变次数，可以在......
+不支持高并发。模式改变次数，可以在迭......
     </div>
   </a>
   
@@ -763,17 +803,14 @@ size、isEmpty、get、set、iterator和listIterator操作以常量时间运行�
       Java8源码之——LinkedList
     </h2>
     <h3 class="post-subtitle">
-      
+      一个底层是链表的列表
     </h3>
     <div class="post-content-preview">
-      简介
-双链表实现的列表，运行null元素。
+      简介双链表实现的列表，运行null元素。
 不支持高并发。模式改变次数，可以在迭代器等使用的时候检查，减少并发修改带来的问题。我们最好创建一个同步的列表：
 1List list = Collections.synchronizedList(new LinkedList(...));
-所在包
-1package java.util;
-声明
-123public class LinkedList&l......
+所在包1package java.util;
+声明123public class LinkedList&lt;E......
     </div>
   </a>
   
@@ -807,12 +844,11 @@ size、isEmpty、get、set、iterator和listIterator操作以常量时间运行�
       Java8源码之——HashMap
     </h2>
     <h3 class="post-subtitle">
-      
+      自动扩容的数组+链表+红黑树的键值对容器
     </h3>
     <div class="post-content-preview">
-      总体介绍
-哈希表，其中存储KEY-VALUE键值对，存储时通过计算KEY的HASH值，然后再将HASH值映射到数组空间，创建结点（Node），然后装入结点数组中。
-因为不同的KEY有可能HASH值相等、或者不同HASH值映射出的数组下标相等，也就是发生了哈希冲突，那么他们要装入同一个位置，这时候用链表解决，后续进来的都链到尾部去。但是链表一长效率就变低，所以一旦插入时发现链表长度超过树化的阈......
+      总体介绍哈希表，其中存储KEY-VALUE键值对，存储时通过计算KEY的HASH值，然后再将HASH值映射到数组空间，创建结点（Node），然后装入结点数组中。
+因为不同的KEY有可能HASH值相等、或者不同HASH值映射出的数组下标相等，也就是发生了哈希冲突，那么他们要装入同一个位置，这时候用链表解决，后续进来的都链到尾部去。但是链表一长效率就变低，所以一旦插入时发现链表长度超过树化的阈值......
     </div>
   </a>
   
@@ -846,13 +882,12 @@ size、isEmpty、get、set、iterator和listIterator操作以常量时间运行�
       Java8源码之——Queue
     </h2>
     <h3 class="post-subtitle">
-      
+      一个常用的队列接口
     </h3>
     <div class="post-content-preview">
-      介绍
-是一个要求按“队列”来处理集合（Collection）中收集的元素而产生的接口。
+      介绍是一个要求按“队列”来处理集合（Collection）中收集的元素而产生的接口。
 队列覆盖了 Collection 的插入（add）、提取（remove）和检查（element）操作并且还自己提供了另一套插入（offer）、提取（poll）和检查（peek）。看似这些方法重复了，但是如果操作失败，那么一个是抛出异常，另一个就是以特殊值返回。
-队列可能不一定是先进先出，因为某些队列的实现......
+队列可能不一定是先进先出，因为某些队列的实现结......
     </div>
   </a>
   
@@ -867,82 +902,6 @@ size、isEmpty、get、set、iterator和listIterator操作以常量时间运行�
     <a href="/tags/#jdk" title="jdk">jdk</a>
     
     <a href="/tags/#source code" title="source code">source code</a>
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
-  <a href="/cn/1629296718/">
-    <h2 class="post-title">
-      算法——简单正则表达式匹配算法
-    </h2>
-    <h3 class="post-subtitle">
-      只支持.和*的正则表达式匹配算法
-    </h3>
-    <div class="post-content-preview">
-      需求分析
-有时候正则表达式没有办法完成我们的业务需求。
-因为其规则众多，算法的复杂度也就比较高。
-我们会自定义一些规则，用来匹配我们需要匹配的东西。
-这个算法实现了简单的正则匹配规则。
-表达式规则
-仅支持以下两种：
-
-
-
-符号
-符号描述
-匹配规则
-
-
-
-
-.
-英文句点
-匹配任意单个字符
-
-
-*
-星号
-匹配零个或多个前面的那一个元素
-
-
-
-表达式举例
-
-
-
-句子
-表达式
-是否成功
-原因
-
-
-
-......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by ka2x on
-    2021-08-18
-  </p>
-  <div class="tags">
-    
-    <a href="/tags/#Java" title="Java">Java</a>
-    
-    <a href="/tags/#algorithm" title="algorithm">algorithm</a>
-    
-    <a href="/tags/#regex" title="regex">regex</a>
     
   </div>
   
@@ -998,15 +957,15 @@ size、isEmpty、get、set、iterator和listIterator操作以常量时间运行�
   <div class="tags">
     
     
-    <a href="/tags/#Java" title="Java" rel="11">Java</a>
+    <a href="/tags/#Java" title="Java" rel="12">Java</a>
     
     
     
-    <a href="/tags/#jdk" title="jdk" rel="7">jdk</a>
+    <a href="/tags/#jdk" title="jdk" rel="8">jdk</a>
     
     
     
-    <a href="/tags/#source code" title="source code" rel="7">source code</a>
+    <a href="/tags/#source code" title="source code" rel="8">source code</a>
     
     
     
@@ -1049,6 +1008,10 @@ size、isEmpty、get、set、iterator和listIterator操作以常量时间运行�
 <div class="widget">
   <ul>
     
+    <a href="cn/1632412894/">
+      <li>Java8源码之——HashSet</li>
+    </a>
+    
     <a href="cn/1631109779/">
       <li>Java8源码之——Vector</li>
     </a>
@@ -1065,10 +1028,6 @@ size、isEmpty、get、set、iterator和listIterator操作以常量时间运行�
       <li>Java8源码之——Deque</li>
     </a>
     
-    <a href="cn/1630810689/">
-      <li>Java8源码之——ArrayList</li>
-    </a>
-    
   </ul>
 </div>
 
@@ -1079,7 +1038,7 @@ size、isEmpty、get、set、iterator和listIterator操作以常量时间运行�
 
 <h5><a href="/archives/">归档</a></h5>
 <div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/09/">September 2021</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/08/">August 2021</a><span class="archive-list-count">7</span></li></ul>
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/09/">September 2021</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="archives/2021/08/">August 2021</a><span class="archive-list-count">7</span></li></ul>
 </div>
 
 
